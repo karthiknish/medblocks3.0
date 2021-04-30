@@ -17,10 +17,20 @@ import {
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { ChevronDownIcon } from "@chakra-ui/icons";
+import * as animationData from "../lottie/hero.json";
+import Lottie from "react-lottie";
 import IndexSection from "./IndexSection";
 export default function Hero() {
   const [isHovered, setHovered] = useState(false);
   const ref = useRef(null);
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: animationData,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
   return (
     <>
       <Head>
@@ -35,14 +45,22 @@ export default function Hero() {
           as={Box}
           textAlign={"center"}
           spacing={{ base: 1, md: 14 }}
-          py={[5, 20, 30]}
+          py={[5, 20, 10]}
+          height={["auto", "auto", "90vh"]}
+          //   sx={{ height: "90vh" }}
         >
           <Flex
             justifyContent={{ base: "none", md: "space-around" }}
             alignItems={{ base: "none", md: "center" }}
             direction={{ base: "column", md: "row" }}
+            height={["auto", "auto", "90vh"]}
           >
-            <motion.div variants={anim} initial="hidden" animate="show">
+            <motion.div
+              //   sx={{ height: "100vh" }}
+              variants={anim}
+              initial="hidden"
+              animate="show"
+            >
               <motion.ul variants={child} style={{ display: "flex" }}>
                 {items2.map((height, i) => (
                   <Item
@@ -126,6 +144,7 @@ export default function Hero() {
               <Text sx={{ fontFamily: "Inter" }} fontSize="3xl" color="#4A4A4A">
                 The stack for building modern healthcare applications
               </Text>
+              <Lottie width={100} height={100} options={defaultOptions} />
               <Flex mt={2} justifyContent="space-evenly" sx={{ gap: "10px" }}>
                 <Button
                   _hover={{ bg: "#e0f4d2" }}
@@ -148,7 +167,7 @@ export default function Hero() {
               </Flex>
             </Flex>
           </Flex>
-          <Flex justifyContent="center">
+          <Flex display={["none", "flex"]} justifyContent="center">
             <motion.div
               whileHover={{
                 scale: 1.5,
@@ -159,7 +178,7 @@ export default function Hero() {
                 fontSize="2em"
                 onClick={() => {
                   if (ref && ref.current) {
-                    ref.current.scrollIntoView();
+                    ref.current.scrollIntoView({ inline: "nearest" });
                   }
                 }}
               />

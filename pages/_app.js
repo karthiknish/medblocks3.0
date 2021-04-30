@@ -7,7 +7,6 @@ import Scroll from "../components/Scroll";
 function MyApp({ Component, pageProps }) {
   return (
     <ChakraProvider theme={theme}>
-      {" "}
       <Nav />
       <Component {...pageProps} />
       <Scroll />

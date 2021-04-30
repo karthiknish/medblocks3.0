@@ -58,8 +58,8 @@ export default function Nav() {
           alignItems={"center"}
           justify={{ base: "center", md: "start" }}
         >
-          <Button component={Link} colorScheme="#f7f7f7">
-            <img width="40" src="logo.png" />
+          <Button as={Link} href="/" colorScheme="#f7f7f7">
+            <img width="40" src="/logo.png" />
             <Text
               fontSize="2xl"
               textAlign={useBreakpointValue({ base: "center", md: "left" })}

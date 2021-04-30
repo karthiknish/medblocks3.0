@@ -46,7 +46,7 @@ export default function Footer() {
     >
       <Container maxW={"6xl"} py={3}>
         <Flex justifyContent="center" alignItems="center" sx={{ gap: "5px" }}>
-          <Image width="10" src="logo.png" />
+          <Image width="10" src="/logo.png" />
           <Text
             fontSize="2xl"
             sx={{
