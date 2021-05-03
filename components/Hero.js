@@ -1,8 +1,17 @@
 import { motion } from "framer-motion";
 import { useState, useRef } from "react";
-
+import Lottie from "react-lottie";
+import * as animationData from "../lottie/hero.json";
 import IndexSection from "./IndexSection";
 export default function Hero() {
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: animationData,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
   const [isHovered, setHovered] = useState(false);
   const ref = useRef();
   return (
@@ -10,7 +19,6 @@ export default function Hero() {
       <div className="relative xl:auto xl:h-screen h-auto">
         <div className="flex flex-col items-center sm:my-16 xs:my-10 sm:p-2 xxs:p-10 xl:-mt-24 xl:h-screen xl:flex-row justify-center">
           <motion.div
-            //   sx={{ height: "100vh" }}
             variants={anim}
             initial="hidden"
             animate="show"
@@ -22,7 +30,8 @@ export default function Hero() {
                   key={i}
                   height={height}
                   i={i}
-                  color={color2[i]}
+                  color1={color3[i]}
+                  color2={color4[i]}
                   words={words2[i]}
                 />
               ))}
@@ -86,7 +95,8 @@ export default function Hero() {
                   key={i}
                   height={height}
                   i={i}
-                  color={color1[i]}
+                  color1={color1[i]}
+                  color2={color2[i]}
                   words={words1[i]}
                   image={image1[i]}
                   width={width1[i]}
@@ -95,11 +105,11 @@ export default function Hero() {
             </motion.ul>
           </motion.div>
           <div className="w-1/2 flex flex-col lg:mt-0 mt-10 justify-center items-center">
-            {/* <img className="lg:w-3/4 w-full" src="medblocks.png" /> */}
             <h3 className="font-inter font-medium text-secondary text-center">
               The stack for building modern healthcare applications
             </h3>
-            <img width="100" src="/gif/hero.gif" />
+            <Lottie width={100} options={defaultOptions} />
+            {/* <img width="100" src="/gif/hero.gif" /> */}
             <div className="flex">
               <a
                 target="_blank"
@@ -133,10 +143,6 @@ export default function Hero() {
               }}
               src="/icons/arrow-down.svg"
             />
-            {/* <ChevronDownIcon
-              fontSize="2em"
-             
-            /> */}
           </motion.div>
         </div>
       </div>{" "}
@@ -144,7 +150,7 @@ export default function Hero() {
     </>
   );
 }
-function Item({ color, words, image }) {
+function Item({ color1, words, image, color2 }) {
   const [hover, setHover] = useState("");
   const [isHovered, setHovered] = useState(false);
   return (
@@ -152,7 +158,7 @@ function Item({ color, words, image }) {
       <motion.div
         layout
         style={{
-          background: color,
+          backgroundImage: `url(${image}),linear-gradient(45deg,${color1},${color2})`,
           height: "100px",
           padding: "15px",
           borderRadius: 5,
@@ -161,7 +167,6 @@ function Item({ color, words, image }) {
           alignItems: "center",
           justifyContent: "center",
           cursor: "default",
-          backgroundImage: `url(${image})`,
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
           backgroundSize: "contain",
@@ -194,7 +199,7 @@ function Item({ color, words, image }) {
             animate={{ y: 0, scale: 1 }}
             style={{
               backgroundColor: "#282A35",
-              zIndex: 10,
+              zIndex: 100,
               marginTop: "100px",
               padding: "10px",
               borderRadius: 10,
@@ -212,15 +217,17 @@ function Item({ color, words, image }) {
 const items1 = [100, 100, 100, 100];
 const items2 = [100, 100, 100];
 
-const color1 = ["#D6E8F9", "#666666", "#f2d133", "#00A6DF"];
+const color1 = ["#56adff", "#666666", "#ddb500", "#0385af"];
+const color2 = ["#D6E8F9", "#ededed", "#fffa9b", "#94dff8"];
 const image1 = [
-  "https://www.openehr.org/static/img/Logo.svg",
+  "/openehr.png",
   "https://www.signstoyou.com/signs/previewimages/high-double-arrow-shaped-3876.png",
-  "https://developer.allscripts.com/content/fhir/images/fhir.png",
-  "https://i.imgur.com/XHEM39i.png",
+  "/fhir.png",
+  "/snomed.png",
 ];
 const width1 = ["250", "30", "250", "200"];
-const color2 = ["#0041C2", "#3090C7", "red"];
+const color3 = ["#001e56", "#8e389e", "red"];
+const color4 = ["#1c6bff", "#3090C7", "#ffbcbc"];
 const words1 = ["openEHR", `Integration Engine`, "FHIR", "SNOMED"];
 const words2 = ["Medication App", "React app", "Your Next app?"];
 const anim = {

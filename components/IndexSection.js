@@ -1,5 +1,60 @@
 import { motion } from "framer-motion";
+import Lottie from "react-lottie";
+import * as animationData1 from "../lottie/develop.json";
+import * as animationData2 from "../lottie/build.json";
+import * as animationData3 from "../lottie/update.json";
+import * as animationData4 from "../lottie/ui-blocks.json";
+import * as animationData5 from "../lottie/vs-code.json";
+import * as animationData6 from "../lottie/consultation.json";
 function IndexSection({ refer }) {
+  const defaultOptions1 = {
+    loop: true,
+    autoplay: true,
+    animationData: animationData1,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
+  const defaultOptions2 = {
+    loop: true,
+    autoplay: true,
+    animationData: animationData2,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
+  const defaultOptions3 = {
+    loop: true,
+    autoplay: true,
+    animationData: animationData3,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
+  const defaultOptions4 = {
+    loop: true,
+    autoplay: true,
+    animationData: animationData4,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
+  const defaultOptions5 = {
+    loop: true,
+    autoplay: true,
+    animationData: animationData5,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
+  const defaultOptions6 = {
+    loop: true,
+    autoplay: true,
+    animationData: animationData6,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
   return (
     <>
       <div
@@ -10,7 +65,10 @@ function IndexSection({ refer }) {
           <h1 className="text-center mt-6 text-head ">What we Do</h1>
         </div>
         <div className="flex flex-col xl:flex-row items-center">
-          <img className=" w-full md:w-1/2 xl:w-1/3" src="/gif/develop.gif" />
+          <div className="lg:w-1/3 w-1/2">
+            <Lottie options={defaultOptions1} />
+          </div>
+          {/* <img className=" w-full md:w-1/2 xl:w-1/3" src="/gif/develop.gif" /> */}
           <div className="w-full xl:w-1/4 flex flex-col mx-auto xl:items-start items-center">
             <h3 className="text-head">Develop</h3>
             <p className="mt-10 xl:mt-3 text-center xl:text-left">
@@ -21,7 +79,9 @@ function IndexSection({ refer }) {
           </div>
         </div>
         <div className="flex flex-col xl:flex-row-reverse items-center">
-          <img className=" w-full md:w-1/2 xl:w-1/3" src="/gif/build.gif" />
+          <div className="lg:w-1/3 w-1/2">
+            <Lottie options={defaultOptions2} />
+          </div>
           <div className="w-full xl:w-1/4 flex flex-col mx-auto xl:items-start p-6 xl:p-0 items-center">
             <h3 className="text-head">Build</h3>
             <p className="mt-10 xl:mt-3 text-center xl:text-left">
@@ -32,7 +92,9 @@ function IndexSection({ refer }) {
           </div>
         </div>{" "}
         <div className="flex flex-col xl:flex-row items-center">
-          <img className="w-full md:w-1/2 xl:w-1/3" src="/gif/update.gif" />
+          <div className="lg:w-1/3 w-1/2">
+            <Lottie options={defaultOptions3} />
+          </div>
           <div className="w-full xl:w-1/4 flex flex-col mx-auto xl:items-start items-center">
             <h3 className="text-head">Update</h3>
             <p className="mt-10 xl:mt-3 text-center xl:text-left">
@@ -49,7 +111,9 @@ function IndexSection({ refer }) {
         </div>
         <div className="lg:flex justify-center">
           <div className="flex flex-col justify-center items-center flex-0.5 border-gray-300 rounded border-2 m-4 p-4">
-            <img className="mx-auto" width="200" src="gif/ui-blocks.gif" />
+            <div className="w-1/4">
+              <Lottie options={defaultOptions4} />
+            </div>
             <h4 className="text-center text-head">UI Components</h4>
             <p className="my-4 text-center">
               Web Components for rapid development of openEHR systems
@@ -63,7 +127,9 @@ function IndexSection({ refer }) {
             </a>
           </div>{" "}
           <div className="flex flex-col justify-center items-center flex-0.5 border-gray-300 rounded border-2 m-4 p-4">
-            <img width="200" src="gif/vs-code.gif" />
+            <div className="w-1/4">
+              <Lottie options={defaultOptions5} />
+            </div>
             <h4 className="text-center text-head">VSCode Extension</h4>
             <p className="my-4 text-center">
               Extension is to help develop fast development of openEHR templates
@@ -104,7 +170,7 @@ function IndexSection({ refer }) {
               boxShadow: "3px 3px 3px 3px rgba(0,0,0,0.15)",
             }}
             className="lg:w-1/3 w-3/4 p-6"
-            src="https://user-images.githubusercontent.com/4476098/43034258-1a290f54-8cfb-11e8-84ba-df33f486209a.png"
+            src="https://i.imgur.com/7NGaqM4.png"
           />
         </div>
       </div>
@@ -113,7 +179,9 @@ function IndexSection({ refer }) {
           Want to work with us?
         </h2>
 
-        <img src="/gif/consult.gif" />
+        <div className="xl:w-1/3 w-1/2">
+          <Lottie options={defaultOptions6} />
+        </div>
         <div className="flex flex-col space-y-10 ">
           <h6 className="text-4xl text-gray-600 font-semibold xl:text-left text-center">
             Book a consultation{" "}
