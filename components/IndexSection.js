@@ -1,245 +1,146 @@
-import {
-  Container,
-  Text,
-  Image,
-  Flex,
-  Heading,
-  Box,
-  Button,
-  Link,
-} from "@chakra-ui/react";
-import Lottie from "react-lottie";
-import * as animationData1 from "../lottie/develop.json";
-import * as animationData2 from "../lottie/build.json";
-import * as animationData3 from "../lottie/update.json";
-import * as animationData4 from "../lottie/ui-blocks.json";
-import * as animationData5 from "../lottie/vs-code.json";
-
+import { motion } from "framer-motion";
 function IndexSection({ refer }) {
-  const defaultOptions1 = {
-    loop: true,
-    autoplay: true,
-    animationData: animationData1,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  };
-  const defaultOptions2 = {
-    loop: true,
-    autoplay: true,
-    animationData: animationData2,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  };
-  const defaultOptions3 = {
-    loop: true,
-    autoplay: true,
-    animationData: animationData3,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  };
-  const defaultOptions4 = {
-    loop: true,
-    autoplay: true,
-    animationData: animationData4,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  };
-  const defaultOptions5 = {
-    loop: true,
-    autoplay: true,
-    animationData: animationData5,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  };
   return (
     <>
-      <Container
-        backgroundColor="#f7f9fc"
+      <div
         ref={refer}
-        maxW={"100%"}
-        pt={[2, 10]}
-
-        //   marginTop={[10, 10, 20]}
+        className="flex flex-col mt-14 bg-gray-100 xxs:p-6 lg:p-2"
       >
-        <Heading
-          mt={4}
-          sx={{ fontFamily: "Inter" }}
-          size="4xl"
-          textAlign="center"
-        >
-          What we Do
-        </Heading>
-        <Flex direction={{ base: "column", md: "row" }}>
-          <Box w={["100%", "100%", "75%", "50%"]}>
-            <Lottie options={defaultOptions1} />
-          </Box>
-          <Flex
-            alignItems="center"
-            mx={4}
-            direction="column"
-            justifyContent="center"
-          >
-            <Box w={["100%", "100%", "50%"]}>
-              <Heading
-                size="2xl"
-                sx={{ fontFamily: "Inter" }}
-                textAlign={["center", "center", "left"]}
-                mb={[2, 2, 2, 10]}
-              >
-                Develop
-              </Heading>
-              <Text fontSize="xl">
-                Develop for all your users' devices with just one codebase. Add
-                fast refresh, true native capabilities, and your creativity, and
-                you'll have the app your users want in no time.
-              </Text>
-            </Box>
-          </Flex>
-        </Flex>
-        <Flex
-          marginTop={{ base: "0", sm: "10" }}
-          direction={{ base: "column-reverse", md: "row" }}
-        >
-          <Flex
-            mx={4}
-            alignItems="center"
-            direction="column"
-            justifyContent="center"
-          >
-            <Box w={["100%", "100%", "50%"]}>
-              <Heading
-                textAlign={["center", "center", "left"]}
-                size="2xl"
-                sx={{ fontFamily: "Inter" }}
-                mb={[2, 2, 2, 10]}
-              >
-                Build
-              </Heading>
-              <Text fontSize="xl">
-                Ready to ship? Let us do the heavy lifting. Expo handles the
-                gritty parts of building for each app store so you don't need
-                Xcode or Android Studio to get your app into people's hands.
-              </Text>
-            </Box>
-          </Flex>
-          <Box w={["100%", "100%", "75%", "50%"]}>
-            <Lottie options={defaultOptions2} />
-          </Box>
-        </Flex>{" "}
-        <Flex direction={{ base: "column", md: "row" }}>
-          <Box w={["100%", "100%", "75%", "50%"]}>
-            <Lottie options={defaultOptions3} />
-          </Box>
-          <Flex
-            alignItems="center"
-            mx={4}
-            direction="column"
-            justifyContent="center"
-          >
-            {" "}
-            <Box w={["100%", "100%", "50%"]}>
-              <Heading
-                textAlign={["center", "center", "left"]}
-                size="2xl"
-                sx={{ fontFamily: "Inter" }}
-                mb={[2, 2, 2, 10]}
-              >
-                Update
-              </Heading>
-              <Text fontSize="xl">
-                Shipped a bug? No worries: with one command, you can deploy a
-                fix that your users will see instantly, without having to
-                re-download your app.
-              </Text>
-            </Box>
-          </Flex>
-        </Flex>
-        <hr
-          style={{
-            marginLeft: "30px",
-            marginRight: "30px",
-            marginTop: "20px",
-          }}
-        />
-      </Container>
-      <Container maxW={"100%"} p={[2, 10]}>
-        <Heading textAlign="center" size="4xl">
-          Our Products
-        </Heading>
-        <Flex
-          direction={{ base: "column", md: "row" }}
-          justifyContent="center"
-          sx={{ gap: "30px" }}
-          mt={4}
-        >
-          <Box
-            w={["100%", "100%", "25%"]}
-            borderWidth="1px"
-            borderRadius="lg"
-            backgroundColor="white"
-          >
-            <Lottie width={200} height={200} options={defaultOptions4} />
-            <Box
-              d="flex"
-              alignItems="center"
-              flexDirection="column"
-              p="6"
-              backgroundColor="white"
+        <div className="flex justify-center items-center">
+          <h1 className="text-center mt-6 text-head ">What we Do</h1>
+        </div>
+        <div className="flex flex-col xl:flex-row items-center">
+          <img className=" w-full md:w-1/2 xl:w-1/3" src="/gif/develop.gif" />
+          <div className="w-full xl:w-1/4 flex flex-col mx-auto xl:items-start items-center">
+            <h3 className="text-head">Develop</h3>
+            <p className="mt-10 xl:mt-3 text-center xl:text-left">
+              Develop for all your users' devices with just one codebase. Add
+              fast refresh, true native capabilities, and your creativity, and
+              you'll have the app your users want in no time.
+            </p>
+          </div>
+        </div>
+        <div className="flex flex-col xl:flex-row-reverse items-center">
+          <img className=" w-full md:w-1/2 xl:w-1/3" src="/gif/build.gif" />
+          <div className="w-full xl:w-1/4 flex flex-col mx-auto xl:items-start p-6 xl:p-0 items-center">
+            <h3 className="text-head">Build</h3>
+            <p className="mt-10 xl:mt-3 text-center xl:text-left">
+              Ready to ship? Let us do the heavy lifting. Expo handles the
+              gritty parts of building for each app store so you don't need
+              Xcode or Android Studio to get your app into people's hands.
+            </p>
+          </div>
+        </div>{" "}
+        <div className="flex flex-col xl:flex-row items-center">
+          <img className="w-full md:w-1/2 xl:w-1/3" src="/gif/update.gif" />
+          <div className="w-full xl:w-1/4 flex flex-col mx-auto xl:items-start items-center">
+            <h3 className="text-head">Update</h3>
+            <p className="mt-10 xl:mt-3 text-center xl:text-left">
+              Shipped a bug? No worries: with one command, you can deploy a fix
+              that your users will see instantly, without having to re-download
+              your app.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div className="flex-col bg:white py-4">
+        <div className="flex justify-center mt-4">
+          <h1 className="text-center text-head">Our Products</h1>
+        </div>
+        <div className="lg:flex justify-center">
+          <div className="flex flex-col justify-center items-center flex-0.5 border-gray-300 rounded border-2 m-4 p-4">
+            <img className="mx-auto" width="200" src="gif/ui-blocks.gif" />
+            <h4 className="text-center text-head">UI Components</h4>
+            <p className="my-4 text-center">
+              Web Components for rapid development of openEHR systems
+            </p>
+
+            <a
+              href="/products/medblocks-ui"
+              className="button bg-primary py-2 px-4 rounded hover:bg-green-200 font-bold"
             >
-              <Text align="center" fontWeight="bold" fontSize="3xl">
-                UI Components
-              </Text>
-              <Text align="center" mt={2}>
-                Web Components for rapid development of openEHR systems
-              </Text>
-              <Button
-                as={Link}
-                href="/products/medblocks-ui"
-                mt={2}
-                colorScheme="green"
-              >
-                Know More
-              </Button>
-            </Box>
-          </Box>
-          <Box
-            w={["100%", "100%", "25%"]}
-            borderWidth="1px"
-            borderRadius="lg"
-            backgroundColor="white"
-          >
-            <Lottie width={200} height={200} options={defaultOptions5} />
-            <Box
-              d="flex"
-              alignItems="center"
-              flexDirection="column"
-              p="6"
-              backgroundColor="white"
+              Know More
+            </a>
+          </div>{" "}
+          <div className="flex flex-col justify-center items-center flex-0.5 border-gray-300 rounded border-2 m-4 p-4">
+            <img width="200" src="gif/vs-code.gif" />
+            <h4 className="text-center text-head">VSCode Extension</h4>
+            <p className="my-4 text-center">
+              Extension is to help develop fast development of openEHR templates
+            </p>
+            <a
+              href="/products/medblocks-vscode"
+              className="button bg-primary py-2 px-4 rounded hover:bg-green-200 font-bold"
             >
-              <Text align="center" fontWeight="bold" fontSize="3xl">
-                VSCode Extension
-              </Text>
-              <Text mt={2} align="center">
-                Extension is to help develop fast development of openEHR
-                templates
-              </Text>{" "}
-              <Button
-                as={Link}
-                href="/products/medblocks-vscode"
-                mt={2}
-                colorScheme="green"
+              Know More
+            </a>
+          </div>
+        </div>
+      </div>
+      <div className="flex flex-col justify-center p-6 bg-gray-100">
+        <h2 className="text-center text-head ">Other Tech Used</h2>
+        <div className="flex lg:flex-row flex-col justify-center items-center lg:p-16 p-4">
+          <motion.div
+            whileHover={{
+              scale: 1.01,
+              boxShadow: "3px 3px 3px 3px rgba(0,0,0,0.15)",
+            }}
+            className="flex-col flex items-center w-1/2 lg:w-1/3 m-4"
+          >
+            <img src="https://hapifhir.io/hapi-fhir/images/logos/raccoon-forwards.png" />
+            <img src="https://hapifhir.io/hapi-fhir/images/logos/small-logo.png" />
+          </motion.div>
+          <motion.img
+            whileHover={{
+              scale: 1.01,
+              boxShadow: "3px 3px 3px 3px rgba(0,0,0,0.15)",
+            }}
+            className="lg:w-1/3 w-full m-4 p-6"
+            src="https://ehrbase.org/wp-content/uploads/2021/05/ehrbase_red5-1.png"
+          />
+          <motion.img
+            whileHover={{
+              scale: 1.01,
+              boxShadow: "3px 3px 3px 3px rgba(0,0,0,0.15)",
+            }}
+            className="lg:w-1/3 w-3/4 p-6"
+            src="https://user-images.githubusercontent.com/4476098/43034258-1a290f54-8cfb-11e8-84ba-df33f486209a.png"
+          />
+        </div>
+      </div>
+      <div className="flex xl:flex-row flex-col items-center p-6 justify-center bg-white">
+        <h2 className="text-center xl:w-1/3 w-full text-head">
+          Want to work with us?
+        </h2>
+
+        <img src="/gif/consult.gif" />
+        <div className="flex flex-col space-y-10 ">
+          <h6 className="text-4xl text-gray-600 font-semibold xl:text-left text-center">
+            Book a consultation{" "}
+            <span className="text-2xl">
+              <motion.a
+                whileHover={{ scale: 1.05 }}
+                className="flex justify-center items-center xl:justify-start"
+                href="/consultation"
               >
-                Know More
-              </Button>
-            </Box>
-          </Box>
-        </Flex>
-      </Container>
+                Here <img width="20" src="/icons/arrow-right.svg" />
+              </motion.a>
+            </span>
+          </h6>
+          <h6 className="text-4xl text-gray-600 xl:text-left font-semibold text-center">
+            Check for new openings{" "}
+            <span className="text-2xl">
+              <motion.a
+                whileHover={{ scale: 1.05 }}
+                className="flex justify-center items-center xl:justify-start"
+                href="/jobs"
+              >
+                Here <img width="20" src="/icons/arrow-right.svg" />
+              </motion.a>
+            </span>
+          </h6>
+        </div>
+      </div>
     </>
   );
 }

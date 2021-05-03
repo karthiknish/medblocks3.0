@@ -1,197 +1,145 @@
-import { useRef } from "react";
-import Head from "next/head";
-import {
-  Box,
-  Heading,
-  Container,
-  Text,
-  Button,
-  Stack,
-  Icon,
-  useColorModeValue,
-  Flex,
-  createIcon,
-  Image,
-  Link,
-} from "@chakra-ui/react";
 import { motion } from "framer-motion";
-import { useState } from "react";
-import { ChevronDownIcon } from "@chakra-ui/icons";
-import * as animationData from "../lottie/hero.json";
-import Lottie from "react-lottie";
+import { useState, useRef } from "react";
+
 import IndexSection from "./IndexSection";
 export default function Hero() {
   const [isHovered, setHovered] = useState(false);
-  const ref = useRef(null);
-  const defaultOptions = {
-    loop: true,
-    autoplay: true,
-    animationData: animationData,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  };
+  const ref = useRef();
   return (
     <>
-      <Head>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap"
-          rel="stylesheet"
-        />
-      </Head>
-
-      <Container maxW={"6xl"}>
-        <Stack
-          as={Box}
-          textAlign={"center"}
-          spacing={{ base: 1, md: 14 }}
-          py={[5, 20, 10]}
-          height={["auto", "auto", "90vh"]}
-          //   sx={{ height: "90vh" }}
-        >
-          <Flex
-            justifyContent={{ base: "none", md: "space-around" }}
-            alignItems={{ base: "none", md: "center" }}
-            direction={{ base: "column", md: "row" }}
-            height={["auto", "auto", "90vh"]}
+      <div className="relative xl:auto xl:h-screen h-auto">
+        <div className="flex flex-col items-center sm:my-16 xs:my-10 sm:p-2 xxs:p-10 xl:-mt-24 xl:h-screen xl:flex-row justify-center">
+          <motion.div
+            //   sx={{ height: "100vh" }}
+            variants={anim}
+            initial="hidden"
+            animate="show"
+            className="lg:w-1/3"
           >
-            <motion.div
-              //   sx={{ height: "100vh" }}
-              variants={anim}
-              initial="hidden"
-              animate="show"
-            >
-              <motion.ul variants={child} style={{ display: "flex" }}>
-                {items2.map((height, i) => (
-                  <Item
-                    key={i}
-                    height={height}
-                    i={i}
-                    color={color2[i]}
-                    words={words2[i]}
-                  />
-                ))}
-              </motion.ul>
-              <motion.ul variants={child}>
-                <li>
-                  <motion.div
-                    layout
-                    onMouseEnter={() => {
-                      setHovered(true);
-                    }}
-                    onMouseLeave={() => {
-                      setHovered(false);
-                    }}
-                    whileHover={{
-                      scale: 1.03,
-                      boxShadow: "0px 3px 3px rgba(0,0,0,0.15)",
-                    }}
-                    whileTap={{
-                      scale: 1.12,
-                      boxShadow: "0px 5px 5px rgba(0,0,0,0.1)",
-                    }}
-                    style={{
-                      background: "#99E265",
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                      borderRadius: "5px",
-                      padding: "10px",
-                      height: "100px",
-                      zIndex: 10,
-                    }}
-                  >
-                    <img
-                      width="60"
-                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Oauth_logo.svg/598px-Oauth_logo.svg.png"
-                    />
-                    {isHovered && (
-                      <motion.div
-                        initial={{ y: -10, scale: 0 }}
-                        animate={{ y: 0, scale: 1 }}
-                        style={{
-                          backgroundColor: "#282A35",
-                          zIndex: 20,
-                          marginTop: "10px",
-                          marginRight: "40px",
-                          padding: "10px",
-                          borderRadius: 10,
-                          boxShadow: "5px 10px 10px #8888",
-                        }}
-                      >
-                        <p style={{ color: "white" }}>OAuth</p>
-                      </motion.div>
-                    )}
-                  </motion.div>
-                </li>
-              </motion.ul>
-              <motion.ul variants={child} style={{ display: "flex" }}>
-                {items1.map((height, i) => (
-                  <Item
-                    key={i}
-                    height={height}
-                    i={i}
-                    color={color1[i]}
-                    words={words1[i]}
-                    image={image1[i]}
-                    width={width1[i]}
-                  />
-                ))}
-              </motion.ul>
-            </motion.div>
-            <Flex sx={{ flex: 0.7 }} alignItems="center" direction="column">
-              <Image src="medblocks.png" />
-              <Text sx={{ fontFamily: "Inter" }} fontSize="3xl" color="#4A4A4A">
-                The stack for building modern healthcare applications
-              </Text>
-              <Lottie width={100} height={100} options={defaultOptions} />
-              <Flex mt={2} justifyContent="space-evenly" sx={{ gap: "10px" }}>
-                <Button
-                  _hover={{ bg: "#e0f4d2" }}
-                  sx={{ backgroundColor: "#99e265" }}
-                  as={Link}
-                  href="https://medium.com/@sidharth_ramesh/introducing-medblocks-storing-medical-records-securely-on-the-interplanetary-file-system-using-20f4e88c9bda"
-                  target="_blank"
+            <motion.ul variants={child} style={{ display: "flex" }}>
+              {items2.map((height, i) => (
+                <Item
+                  key={i}
+                  height={height}
+                  i={i}
+                  color={color2[i]}
+                  words={words2[i]}
+                />
+              ))}
+            </motion.ul>
+            <motion.ul variants={child}>
+              <li>
+                <motion.div
+                  layout
+                  onMouseEnter={() => {
+                    setHovered(true);
+                  }}
+                  onMouseLeave={() => {
+                    setHovered(false);
+                  }}
+                  whileHover={{
+                    scale: 1.03,
+                    boxShadow: "0px 3px 3px rgba(0,0,0,0.15)",
+                  }}
+                  whileTap={{
+                    scale: 1.12,
+                    boxShadow: "0px 5px 5px rgba(0,0,0,0.1)",
+                  }}
+                  style={{
+                    background: "#99E265",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    borderRadius: "5px",
+                    padding: "10px",
+                    height: "100px",
+                    zIndex: 10,
+                  }}
                 >
-                  Learn More
-                </Button>
-                <Button
-                  as={Link}
-                  href="https://medium.com/@sidharth_ramesh/introducing-medblocks-storing-medical-records-securely-on-the-interplanetary-file-system-using-20f4e88c9bda"
-                  variant="outline"
-                  colorScheme="gray"
-                  target="_blank"
-                >
-                  Github
-                </Button>
-              </Flex>
-            </Flex>
-          </Flex>
-          <Flex display={["none", "flex"]} justifyContent="center">
-            <motion.div
-              whileHover={{
-                scale: 1.5,
-                // boxShadow: "0px 3px 3px rgba(0,0,0,0.15)",
+                  <img
+                    width="60"
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Oauth_logo.svg/598px-Oauth_logo.svg.png"
+                  />
+                  {isHovered && (
+                    <motion.div
+                      initial={{ y: -10, scale: 0 }}
+                      animate={{ y: 0, scale: 1 }}
+                      style={{
+                        backgroundColor: "#282A35",
+                        zIndex: 20,
+                        marginTop: "10px",
+                        marginRight: "40px",
+                        padding: "10px",
+                        borderRadius: 10,
+                        boxShadow: "5px 10px 10px #8888",
+                      }}
+                    >
+                      <p style={{ color: "white" }}>OAuth</p>
+                    </motion.div>
+                  )}
+                </motion.div>
+              </li>
+            </motion.ul>
+            <motion.ul variants={child} style={{ display: "flex" }}>
+              {items1.map((height, i) => (
+                <Item
+                  key={i}
+                  height={height}
+                  i={i}
+                  color={color1[i]}
+                  words={words1[i]}
+                  image={image1[i]}
+                  width={width1[i]}
+                />
+              ))}
+            </motion.ul>
+          </motion.div>
+          <div className="flex flex-col lg:mt-0 mt-10 justify-center items-center">
+            <img className="lg:w-3/4 w-full" src="medblocks.png" />
+            <p className="font-inter font-medium text-secondary text-center">
+              The stack for building modern healthcare applications
+            </p>
+            <img width="100" src="/gif/hero.gif" />
+            <div className="flex">
+              <a
+                target="_blank"
+                href="https://medium.com/@sidharth_ramesh/introducing-medblocks-storing-medical-records-securely-on-the-interplanetary-file-system-using-20f4e88c9bda"
+                className="button bg-primary py-2 px-4 mr-4 rounded hover:bg-green-200 font-bold"
+              >
+                Learn More
+              </a>
+              <a
+                href="https://medium.com/@sidharth_ramesh/introducing-medblocks-storing-medical-records-securely-on-the-interplanetary-file-system-using-20f4e88c9bda"
+                target="_blank"
+                className="button bg-gray-100 border border-primary py-2 px-4 rounded hover:bg-green-200 font-bold"
+              >
+                Github
+              </a>
+            </div>
+          </div>
+        </div>{" "}
+        <div className="xl:block hidden absolute bottom-10 left-1/2">
+          <motion.div
+            whileHover={{
+              scale: 1.5,
+              boxShadow: "0px 3px 3px rgba(0,0,0,0.15)",
+            }}
+          >
+            <img
+              onClick={() => {
+                if (ref && ref.current) {
+                  ref.current.scrollIntoView({ inline: "nearest" });
+                }
               }}
-            >
-              <ChevronDownIcon
-                fontSize="2em"
-                onClick={() => {
-                  if (ref && ref.current) {
-                    ref.current.scrollIntoView({ inline: "nearest" });
-                  }
-                }}
-              />
-            </motion.div>
-          </Flex>
-        </Stack>
-      </Container>
-      <hr
-        style={{
-          marginLeft: "30px",
-          marginRight: "30px",
-        }}
-      />
+              src="/icons/arrow-down.svg"
+            />
+            {/* <ChevronDownIcon
+              fontSize="2em"
+             
+            /> */}
+          </motion.div>
+        </div>
+      </div>{" "}
       <IndexSection refer={ref} />
     </>
   );

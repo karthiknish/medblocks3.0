@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ArrowUpIcon } from "@chakra-ui/icons";
+// import { ArrowUpIcon } from "@chakra-ui/icons";
 function Scroll() {
   const [isVisible, setIsVisible] = useState(false);
   const toggleVisibility = () => {
@@ -36,7 +36,7 @@ function Scroll() {
           }}
           onClick={scrollToTop}
         >
-          <ArrowUpIcon />
+          <img src="/icons/arrow-up.svg" />
         </div>
       )}
     </>

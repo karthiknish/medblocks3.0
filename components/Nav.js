@@ -1,274 +1,239 @@
-import {
-  Box,
-  Flex,
-  Text,
-  IconButton,
-  Button,
-  Stack,
-  Collapse,
-  Icon,
-  Link,
-  Popover,
-  PopoverTrigger,
-  PopoverContent,
-  useColorModeValue,
-  useBreakpointValue,
-  useDisclosure,
-} from "@chakra-ui/react";
-import {
-  HamburgerIcon,
-  CloseIcon,
-  ChevronDownIcon,
-  ChevronRightIcon,
-} from "@chakra-ui/icons";
-
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import { useMediaQuery } from "react-responsive";
+import { useRouter } from "next/router";
 export default function Nav() {
-  const { isOpen, onToggle } = useDisclosure();
+  const [navbarOpen, setNavbarOpen] = useState(false);
+  const [appear, setAppear] = useState("");
+  const [mouse, setMouse] = useState(false);
+  const [prodMob, setprodMob] = useState(false);
+  const router = useRouter();
 
+  const mobileNav = useMediaQuery({
+    query: "(max-width:1024px)",
+  });
+  const variants = {
+    open: { rotate: 0 },
+    closed: { rotate: 180 },
+  };
+  useEffect(() => {
+    console.log(mobileNav);
+  }, [mobileNav]);
   return (
-    <Box sx={{ position: "sticky", top: 0, zIndex: 100 }}>
-      <Flex
-        bg={useColorModeValue("white", "gray.800")}
-        color={useColorModeValue("gray.600", "white")}
-        minH={"60px"}
-        py={{ base: 2 }}
-        px={{ base: 4 }}
-        borderBottom={1}
-        borderStyle={"solid"}
-        borderColor={useColorModeValue("gray.200", "gray.900")}
-        align={"center"}
-      >
-        <Flex
-          flex={{ base: 1, md: "auto" }}
-          ml={{ base: -2 }}
-          display={{ base: "flex", md: "none" }}
-        >
-          <IconButton
-            onClick={onToggle}
-            icon={
-              isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />
-            }
-            variant={"ghost"}
-            aria-label={"Toggle Navigation"}
-          />
-        </Flex>
-        <Flex
-          marginLeft={{ md: "20", base: "0" }}
-          flex={{ base: 1 }}
-          alignItems={"center"}
-          justify={{ base: "center", md: "start" }}
-        >
-          <Button as={Link} href="/" colorScheme="#f7f7f7">
-            <img width="40" src="/logo.png" />
-            <Text
-              fontSize="2xl"
-              textAlign={useBreakpointValue({ base: "center", md: "left" })}
-              sx={{ fontFamily: "Source Sans Pro", color: "#666666" }}
-              color={useColorModeValue("gray.800", "white")}
+    <>
+      <div className="sticky top-0 flex z-10  flex-wrap">
+        <nav className="relative z-10 w-full flex flex-wrap items-center justify-between px-2 py-2 bg-white border-b border-gray-200">
+          <div className="w-full px-4 mx-auto flex flex-wrap items-center justify-between">
+            <div
+              className={`w-full z-10 relative flex align-baseline justify-between lg:w-auto px-4  lg:justify-start  `}
             >
-              Medblocks
-            </Text>
-          </Button>
-        </Flex>
-        <Flex display={{ base: "none", md: "flex" }} mr={10}>
-          <DesktopNav />
-        </Flex>
-      </Flex>
+              <a
+                className="button text-xl xxs:mr-auto  text-gray-500 rounded flex font-bold items-center leading-relaxed mr-4 py-2 whitespace-nowrap focus:outline-none focus:ring focus:border-blue-300 "
+                href="/"
+              >
+                <img className="mr-2" width="50" src="/logo.png" />
+                MedBlocks
+              </a>
+              {!navbarOpen ? (
+                <motion.div
+                  className="my-auto"
+                  variants={variants}
+                  animate={navbarOpen ? "open" : "closed"}
+                >
+                  <img
+                    src="/icons/hamburger.svg"
+                    variants={variants}
+                    animate={navbarOpen ? "open" : "closed"}
+                    onClick={() => {
+                      setNavbarOpen(!navbarOpen);
+                      setAppear("yes");
+                    }}
+                    className="cursor-pointer w-3/4 block lg:hidden outline-none focus:outline-none"
+                  />
+                </motion.div>
+              ) : (
+                <motion.div
+                  className="my-auto"
+                  initial={{ scale: 0 }}
+                  animate={{ scale: navbarOpen ? 1 : 0 }}
+                >
+                  <img
+                    src="/icons/close.svg"
+                    onClick={() => {
+                      setNavbarOpen(!navbarOpen);
+                      setAppear("no");
+                      setprodMob(false);
+                    }}
+                    className="cursor-pointer w-3/4 my-auto block lg:hidden outline-none focus:outline-none"
+                  />
+                </motion.div>
+              )}
+            </div>
 
-      <Collapse in={isOpen} animateOpacity>
-        <MobileNav />
-      </Collapse>
-    </Box>
+            <div
+              onMouseLeave={() => setMouse(false)}
+              className={`lg:flex-grow items-center ${mobileNav && "w-full"}`}
+            >
+              <motion.ul
+                inital={{
+                  y: appear === "" ? 0 : -100,
+                  opacity: appear === "" ? 1 : 0,
+                }}
+                animate={{
+                  y: appear === "" ? 1 : 0,
+                  opacity: appear === "" ? 1 : appear === "yes" ? 1 : 0,
+                }}
+                className={`lg:flex lg:justify-end  ${
+                  navbarOpen ? "block" : "hidden"
+                } list-none ml-auto`}
+              >
+                <li
+                  onMouseEnter={() => {
+                    setMouse(true);
+                  }}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  className={`nav-item `}
+                >
+                  <a
+                    onClick={() => {
+                      if (mobileNav) {
+                        setprodMob(!prodMob);
+                      }
+                    }}
+                    className={`button cursor-pointer px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-gray-600 hover:opacity-75 hover:bg-gray-200 rounded ${
+                      router.route === "products" && "bg-gray-200"
+                    }`}
+                  >
+                    Products
+                    {mobileNav && (
+                      <img
+                        width="20"
+                        className="ml-auto"
+                        src="/icons/arrow-down.svg"
+                      />
+                    )}
+                  </a>
+                  {mouse && !mobileNav && <Products setMouse={setMouse} />}
+                  {prodMob && <ProdMob />}
+                </li>
+                <li className="nav-item">
+                  <a
+                    className={`button px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-gray-600 hover:opacity-75 hover:bg-gray-200 rounded ${
+                      router.route === "/jobs" && "bg-gray-200"
+                    }`}
+                    href="/jobs"
+                  >
+                    Jobs
+                  </a>
+                </li>{" "}
+                <li className="nav-item">
+                  <a
+                    className={`button px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-gray-600 hover:opacity-75 hover:bg-gray-200 rounded ${
+                      router.route === "/consultation" && "bg-gray-200"
+                    }`}
+                    href="/consultation"
+                  >
+                    Consultation
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a
+                    target="_blank"
+                    className="button px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-gray-600 hover:opacity-75 hover:bg-gray-200 rounded"
+                    href="https://blog.medblocks.org/"
+                  >
+                    Blog
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a
+                    target="_blank"
+                    className="button px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-gray-600 hover:opacity-75 hover:bg-gray-200 rounded"
+                    href="https://github.com/sidharthramesh/medblocks"
+                  >
+                    Github
+                  </a>
+                </li>
+              </motion.ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </>
   );
 }
-
-const DesktopNav = () => {
-  return (
-    <Stack justify={"flex-end"} direction={"row"} spacing={4}>
-      {NAV_ITEMS.map((navItem) => (
-        <Box key={navItem.label}>
-          <Popover trigger={"hover"} placement={"bottom-start"}>
-            <PopoverTrigger>
-              <Link
-                p={2}
-                target="_blank"
-                href={navItem.href ?? "#"}
-                fontSize={"sm"}
-                fontWeight={500}
-                color={useColorModeValue("gray.600", "gray.200")}
-                _hover={{
-                  textDecoration: "none",
-                  color: useColorModeValue("gray.800", "white"),
-                }}
-              >
-                {navItem.label}
-              </Link>
-            </PopoverTrigger>
-
-            {navItem.children && (
-              <PopoverContent
-                border={0}
-                boxShadow={"xl"}
-                bg={useColorModeValue("white", "gray.800")}
-                p={4}
-                rounded={"xl"}
-                minW={"sm"}
-              >
-                <Stack>
-                  {navItem.children.map((child) => (
-                    <DesktopSubNav key={child.label} {...child} />
-                  ))}
-                </Stack>
-              </PopoverContent>
-            )}
-          </Popover>
-        </Box>
-      ))}
-    </Stack>
-  );
-};
-
-const DesktopSubNav = ({ label, href, subLabel }) => {
-  return (
-    <Link
-      href={href}
-      role={"group"}
-      display={"block"}
-      p={2}
-      rounded={"md"}
-      _hover={{ bg: useColorModeValue("pink.50", "gray.900") }}
-    >
-      <Stack direction={"row"} align={"center"}>
-        <Box>
-          <Text
-            transition={"all .3s ease"}
-            _groupHover={{ color: "pink.400" }}
-            fontWeight={500}
-          >
-            {label}
-          </Text>
-          <Text fontSize={"sm"}>{subLabel}</Text>
-        </Box>
-        <Flex
-          transition={"all .3s ease"}
-          transform={"translateX(-10px)"}
-          opacity={0}
-          _groupHover={{ opacity: "100%", transform: "translateX(0)" }}
-          justify={"flex-end"}
-          align={"center"}
-          flex={1}
+const Products = ({ setMouse }) => (
+  <motion.div
+    onMouseEnter={() => setMouse(true)}
+    onMouseLeave={() => setMouse(false)}
+    initial={{ y: -10 }}
+    animate={{ y: 0 }}
+    className="fixed top-5 bg-white z-20 p-3 shadow-xl rounded"
+  >
+    <ul className="flex flex-col items-center">
+      <li>
+        <a
+          className="button text-gray-600 hover:text-black"
+          href="/products/medblocks-ui"
         >
-          <Icon color={"pink.400"} w={5} h={5} as={ChevronRightIcon} />
-        </Flex>
-      </Stack>
-    </Link>
-  );
-};
-
-const MobileNav = () => {
-  return (
-    <Stack
-      bg={useColorModeValue("white", "gray.800")}
-      p={4}
-      display={{ md: "none" }}
-    >
-      {NAV_ITEMS.map((navItem) => (
-        <MobileNavItem key={navItem.label} {...navItem} />
-      ))}
-    </Stack>
-  );
-};
-
-const MobileNavItem = ({ label, children, href }) => {
-  const { isOpen, onToggle } = useDisclosure();
-
-  return (
-    <Stack spacing={4} onClick={children && onToggle}>
-      <Flex
-        py={2}
-        as={Link}
-        href={href ?? "#"}
-        justify={"space-between"}
-        align={"center"}
-        _hover={{
-          textDecoration: "none",
-        }}
-      >
-        <Text
-          fontWeight={600}
-          color={useColorModeValue("gray.600", "gray.200")}
+          <div className="bg-white p-2 hover:bg-hoverbg rounded">
+            <p className="text-black font-bold">UI Components</p>
+            <h6 className="text-gray-600">
+              Web Components for rapid development of openEHR systems
+            </h6>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a
+          className="button text-gray-600 hover:text-black"
+          href="/products/medblocks-vscode"
         >
-          {label}
-        </Text>
-        {children && (
-          <Icon
-            as={ChevronDownIcon}
-            transition={"all .25s ease-in-out"}
-            transform={isOpen ? "rotate(180deg)" : ""}
-            w={6}
-            h={6}
-          />
-        )}
-      </Flex>
-
-      <Collapse in={isOpen} animateOpacity style={{ marginTop: "0!important" }}>
-        <Stack
-          mt={2}
-          pl={4}
-          borderLeft={1}
-          borderStyle={"solid"}
-          borderColor={useColorModeValue("gray.200", "gray.700")}
-          align={"start"}
+          <div className="bg-white p-2 hover:bg-hoverbg rounded">
+            <p className="text-black font-bold">Vs Code</p>
+            <h6 className="text-gray-600">
+              Extension for development of openEHR templates
+            </h6>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </motion.div>
+);
+const ProdMob = () => (
+  <motion.div
+    initial={{ y: -10 }}
+    animate={{ y: 0 }}
+    className="bg-white p-3 rounded"
+  >
+    <ul className="flex flex-col">
+      <li>
+        <a
+          className="button text-gray-600 hover:text-black"
+          href="/products/medblocks-ui"
         >
-          {children &&
-            children.map((child) => (
-              <Link key={child.label} py={2} href={child.href}>
-                {child.label}
-              </Link>
-            ))}
-        </Stack>
-      </Collapse>
-    </Stack>
-  );
-};
-
-const NAV_ITEMS = [
-  {
-    label: "Projects",
-    children: [
-      {
-        label: "Medblocks UI VSCode",
-        subLabel: "Fast development of openEHR templates",
-        // href: "#",
-      },
-      {
-        label: "MedBlocks UI Components",
-        subLabel: "Up-and-coming Designers",
-        href: "#",
-      },
-    ],
-  },
-  {
-    label: "Jobs",
-    children: [
-      {
-        label: "Job Board",
-        subLabel: "Find your dream job",
-        href: "#",
-      },
-      {
-        label: "Freelance Projects",
-        subLabel: "An exclusive list for contract work",
-        href: "#",
-      },
-    ],
-  },
-  {
-    label: "Blog",
-    href: "https://blog.medblocks.org/",
-  },
-  {
-    label: "Github",
-    href: "https://github.com/sidharthramesh/medblocks",
-  },
-];
+          <div className="bg-white p-2 hover:bg-hoverbg rounded">
+            <span className="text-black font-bold">UI Components</span>
+            <h6 className="text-gray-600">
+              Web Components for rapid development of openEHR systems
+            </h6>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a
+          className="button text-gray-600 hover:text-black"
+          href="/products/medblocks-vscode"
+        >
+          <div className="bg-white p-2 hover:bg-hoverbg rounded">
+            <span className="text-black font-bold">Vs Code</span>
+            <h6 className="text-gray-600">
+              Extension for development of openEHR templates
+            </h6>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </motion.div>
+);

@@ -1,10 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 html,
 body {
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu,
-    Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif !important;
   scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+@layer base {
+  h1 {
+    @apply text-5xl !important;
+    @apply font-extrabold !important;
+    @apply font-inter !important;
+  }
+  h2 {
+    @apply font-extrabold !important;
+    @apply text-4xl !important;
+    @apply font-inter !important;
+  }
+  h3 {
+    @apply font-bold !important;
+    @apply font-inter !important;
+    @apply text-3xl !important;
+  }
+  h4 {
+    @apply font-bold !important;
+    @apply font-inter !important;
+    @apply text-2xl !important;
+  }
+  h5 {
+    @apply font-bold !important;
+    @apply font-inter !important;
+    @apply text-xl !important;
+  }
+  p {
+    @apply text-xl !important;
+  }
+  @screen sm {
+    h1 {
+      @apply text-8xl !important;
+    }
+    h2 {
+      @apply text-7xl !important;
+    }
+    h3 {
+      @apply text-6xl !important;
+    }
+    h4 {
+      @apply text-5xl !important;
+    }
+    h4 {
+      @apply text-4xl !important;
+    }
+  }
 }
 
 a {
@@ -30,4 +82,12 @@ body::-webkit-scrollbar-thumb {
   background-color: #2222;
   border-radius: 20px;
   border: 3px solid white;
+}
+::selection {
+  background: #9ae266;
+  color: white;
+}
+::-moz-selection {
+  background: #9ae266;
+  color: white;
 }
