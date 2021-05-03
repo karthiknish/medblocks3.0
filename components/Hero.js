@@ -94,11 +94,11 @@ export default function Hero() {
               ))}
             </motion.ul>
           </motion.div>
-          <div className="flex flex-col lg:mt-0 mt-10 justify-center items-center">
-            <img className="lg:w-3/4 w-full" src="medblocks.png" />
-            <p className="font-inter font-medium text-secondary text-center">
+          <div className="w-1/2 flex flex-col lg:mt-0 mt-10 justify-center items-center">
+            {/* <img className="lg:w-3/4 w-full" src="medblocks.png" /> */}
+            <h3 className="font-inter font-medium text-secondary text-center">
               The stack for building modern healthcare applications
-            </p>
+            </h3>
             <img width="100" src="/gif/hero.gif" />
             <div className="flex">
               <a
