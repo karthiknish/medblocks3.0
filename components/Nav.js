@@ -1,12 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { useMediaQuery } from "react-responsive";
 import { useRouter } from "next/router";
 export default function Nav() {
   const [navbarOpen, setNavbarOpen] = useState(false);
   const [appear, setAppear] = useState("");
-  const [mouse, setMouse] = useState(false);
-  const [prodMob, setprodMob] = useState(false);
   const router = useRouter();
 
   const mobileNav = useMediaQuery({
@@ -16,9 +14,7 @@ export default function Nav() {
     open: { rotate: 0 },
     closed: { rotate: 180 },
   };
-  useEffect(() => {
-    console.log(mobileNav);
-  }, [mobileNav]);
+
   return (
     <>
       <div className="sticky top-0 flex z-10  flex-wrap">
@@ -71,7 +67,6 @@ export default function Nav() {
             </div>
 
             <div
-              onMouseLeave={() => setMouse(false)}
               className={`lg:flex-grow items-center ${mobileNav && "w-full"}`}
             >
               <motion.ul
@@ -88,34 +83,18 @@ export default function Nav() {
                 } list-none ml-auto`}
               >
                 <li
-                  onMouseEnter={() => {
-                    setMouse(true);
-                  }}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   className={`nav-item `}
                 >
                   <a
-                    onClick={() => {
-                      if (mobileNav) {
-                        setprodMob(!prodMob);
-                      }
-                    }}
+                    href="/products"
                     className={`button cursor-pointer px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-gray-600 hover:opacity-75 hover:bg-gray-200 rounded ${
                       router.route === "products" && "bg-gray-200"
                     }`}
                   >
                     Products
-                    {mobileNav && (
-                      <img
-                        width="20"
-                        className="ml-auto"
-                        src="/icons/arrow-down.svg"
-                      />
-                    )}
                   </a>
-                  {mouse && !mobileNav && <Products setMouse={setMouse} />}
-                  {prodMob && <ProdMob />}
                 </li>
                 <li className="nav-item">
                   <a
@@ -163,77 +142,3 @@ export default function Nav() {
     </>
   );
 }
-const Products = ({ setMouse }) => (
-  <motion.div
-    onMouseEnter={() => setMouse(true)}
-    onMouseLeave={() => setMouse(false)}
-    initial={{ y: -10 }}
-    animate={{ y: 0 }}
-    className="fixed top-5 bg-white z-20 p-3 shadow-xl rounded"
-  >
-    <ul className="flex flex-col items-center">
-      <li>
-        <a
-          className="button text-gray-600 hover:text-black"
-          href="/products/medblocks-ui"
-        >
-          <div className="bg-white p-2 hover:bg-hoverbg rounded">
-            <p className="text-black font-bold">UI Components</p>
-            <h6 className="text-gray-600">
-              Web Components for rapid development of openEHR systems
-            </h6>
-          </div>
-        </a>
-      </li>
-      <li>
-        <a
-          className="button text-gray-600 hover:text-black"
-          href="/products/medblocks-vscode"
-        >
-          <div className="bg-white p-2 hover:bg-hoverbg rounded">
-            <p className="text-black font-bold">Vs Code</p>
-            <h6 className="text-gray-600">
-              Extension for development of openEHR templates
-            </h6>
-          </div>
-        </a>
-      </li>
-    </ul>
-  </motion.div>
-);
-const ProdMob = () => (
-  <motion.div
-    initial={{ y: -10 }}
-    animate={{ y: 0 }}
-    className="bg-white p-3 rounded"
-  >
-    <ul className="flex flex-col">
-      <li>
-        <a
-          className="button text-gray-600 hover:text-black"
-          href="/products/medblocks-ui"
-        >
-          <div className="bg-white p-2 hover:bg-hoverbg rounded">
-            <span className="text-black font-bold">UI Components</span>
-            <h6 className="text-gray-600">
-              Web Components for rapid development of openEHR systems
-            </h6>
-          </div>
-        </a>
-      </li>
-      <li>
-        <a
-          className="button text-gray-600 hover:text-black"
-          href="/products/medblocks-vscode"
-        >
-          <div className="bg-white p-2 hover:bg-hoverbg rounded">
-            <span className="text-black font-bold">Vs Code</span>
-            <h6 className="text-gray-600">
-              Extension for development of openEHR templates
-            </h6>
-          </div>
-        </a>
-      </li>
-    </ul>
-  </motion.div>
-);
