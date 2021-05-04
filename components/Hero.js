@@ -12,7 +12,7 @@ export default function Hero() {
       preserveAspectRatio: "xMidYMid slice",
     },
   };
-  const [isHovered, setHovered] = useState(false);
+
   const ref = useRef();
   return (
     <>
@@ -29,7 +29,6 @@ export default function Hero() {
                 <Item
                   key={i}
                   height={height}
-                  i={i}
                   color1={color3[i]}
                   color2={color4[i]}
                   words={words2[i]}
@@ -40,12 +39,6 @@ export default function Hero() {
               <li>
                 <motion.div
                   layout
-                  onMouseEnter={() => {
-                    setHovered(true);
-                  }}
-                  onMouseLeave={() => {
-                    setHovered(false);
-                  }}
                   whileHover={{
                     scale: 1.03,
                     boxShadow: "0px 3px 3px rgba(0,0,0,0.15)",
@@ -69,23 +62,6 @@ export default function Hero() {
                     width="60"
                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Oauth_logo.svg/598px-Oauth_logo.svg.png"
                   />
-                  {isHovered && (
-                    <motion.div
-                      initial={{ y: -10, scale: 0 }}
-                      animate={{ y: 0, scale: 1 }}
-                      style={{
-                        backgroundColor: "#282A35",
-                        zIndex: 20,
-                        marginTop: "10px",
-                        marginRight: "40px",
-                        padding: "10px",
-                        borderRadius: 10,
-                        boxShadow: "5px 10px 10px #8888",
-                      }}
-                    >
-                      <p style={{ color: "white" }}>OAuth</p>
-                    </motion.div>
-                  )}
                 </motion.div>
               </li>
             </motion.ul>
@@ -94,12 +70,10 @@ export default function Hero() {
                 <Item
                   key={i}
                   height={height}
-                  i={i}
                   color1={color1[i]}
                   color2={color2[i]}
                   words={words1[i]}
                   image={image1[i]}
-                  width={width1[i]}
                 />
               ))}
             </motion.ul>
@@ -170,6 +144,7 @@ function Item({ color1, words, image, color2 }) {
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
           backgroundSize: "contain",
+          border: `${words.includes("You") && "5px dashed red"}`,
         }}
         whileHover={{
           scale: 1.03,
@@ -188,26 +163,15 @@ function Item({ color1, words, image, color2 }) {
           setHover("");
         }}
       >
+        {console.log(words.includes("You"))}
         {words && !image && (
-          <p className="hero-p" style={{ color: "white" }}>
+          <p
+            className={`text-center text-white ${
+              words.includes("Your") && "text-red-500"
+            }`}
+          >
             {words}
           </p>
-        )}
-        {isHovered && image && (
-          <motion.div
-            initial={{ y: -10, scale: 0 }}
-            animate={{ y: 0, scale: 1 }}
-            style={{
-              backgroundColor: "#282A35",
-              zIndex: 100,
-              marginTop: "100px",
-              padding: "10px",
-              borderRadius: 10,
-              boxShadow: "5px 10px 10px #8888",
-            }}
-          >
-            <p style={{ color: "white" }}>{hover}</p>
-          </motion.div>
         )}
       </motion.div>
     </li>
@@ -225,9 +189,8 @@ const image1 = [
   "/fhir.png",
   "/snomed.png",
 ];
-const width1 = ["250", "30", "250", "200"];
-const color3 = ["#001e56", "#8e389e", "red"];
-const color4 = ["#1c6bff", "#3090C7", "#ffbcbc"];
+const color3 = ["#001e56", "#8e389e", "white"];
+const color4 = ["#1c6bff", "#3090C7", "white"];
 const words1 = ["openEHR", `Integration Engine`, "FHIR", "SNOMED"];
 const words2 = ["Medication App", "React app", "Your Next app?"];
 const anim = {
