@@ -125,53 +125,56 @@ function IndexSection({ refer }) {
             >
               Know More
             </a>
-          </div>{" "}
-          <div className="flex flex-col justify-center items-center flex-0.5 border-gray-300 rounded border-2 m-4 p-4">
-            <div className="w-1/4">
-              <Lottie options={defaultOptions5} />
+          </div>
+          <div className="grid grid-flow-col">
+            <div className="flex flex-col justify-center items-center flex-0.5 border-gray-300 rounded border-2 m-4 p-4">
+              <div className="w-1/4">
+                <Lottie options={defaultOptions5} />
+              </div>
+              <h4 className="text-center text-head">VSCode Extension</h4>
+              <p className="my-4 text-center">
+                Extension is to help develop fast development of openEHR
+                templates
+              </p>
+              <a
+                href="/products/medblocks-vscode"
+                className="button bg-primary py-2 px-4 rounded hover:bg-green-200 font-bold"
+              >
+                Know More
+              </a>
             </div>
-            <h4 className="text-center text-head">VSCode Extension</h4>
-            <p className="my-4 text-center">
-              Extension is to help develop fast development of openEHR templates
-            </p>
-            <a
-              href="/products/medblocks-vscode"
-              className="button bg-primary py-2 px-4 rounded hover:bg-green-200 font-bold"
-            >
-              Know More
-            </a>
           </div>
         </div>
-      </div>
-      <div className="flex flex-col justify-center p-6 bg-gray-100">
-        <h2 className="text-center text-head ">Other Tech Used</h2>
-        <div className="flex lg:flex-row flex-col justify-center items-center lg:p-16 p-4">
-          <motion.div
-            whileHover={{
-              scale: 1.01,
-              boxShadow: "3px 3px 3px 3px rgba(0,0,0,0.15)",
-            }}
-            className="flex-col flex items-center w-1/2 lg:w-1/3 m-4"
-          >
-            <img src="https://hapifhir.io/hapi-fhir/images/logos/raccoon-forwards.png" />
-            <img src="https://hapifhir.io/hapi-fhir/images/logos/small-logo.png" />
-          </motion.div>
-          <motion.img
-            whileHover={{
-              scale: 1.01,
-              boxShadow: "3px 3px 3px 3px rgba(0,0,0,0.15)",
-            }}
-            className="lg:w-1/3 w-full m-4 p-6"
-            src="https://ehrbase.org/wp-content/uploads/2021/05/ehrbase_red5-1.png"
-          />
-          <motion.img
-            whileHover={{
-              scale: 1.01,
-              boxShadow: "3px 3px 3px 3px rgba(0,0,0,0.15)",
-            }}
-            className="lg:w-1/3 w-3/4 p-6"
-            src="https://i.imgur.com/7NGaqM4.png"
-          />
+        <div className="flex flex-col justify-center p-6 bg-gray-100">
+          <h2 className="text-center text-head ">Other Tech Used</h2>
+          <div className="flex lg:flex-row flex-col justify-center items-center lg:p-16 p-4">
+            <motion.div
+              whileHover={{
+                scale: 1.01,
+                boxShadow: "3px 3px 3px 3px rgba(0,0,0,0.15)",
+              }}
+              className="flex-col flex items-center w-1/2 lg:w-1/3 m-4"
+            >
+              <img src="https://hapifhir.io/hapi-fhir/images/logos/raccoon-forwards.png" />
+              <img src="https://hapifhir.io/hapi-fhir/images/logos/small-logo.png" />
+            </motion.div>
+            <motion.img
+              whileHover={{
+                scale: 1.01,
+                boxShadow: "3px 3px 3px 3px rgba(0,0,0,0.15)",
+              }}
+              className="lg:w-1/3 w-full m-4 p-6"
+              src="https://ehrbase.org/wp-content/uploads/2021/05/ehrbase_red5-1.png"
+            />
+            <motion.img
+              whileHover={{
+                scale: 1.01,
+                boxShadow: "3px 3px 3px 3px rgba(0,0,0,0.15)",
+              }}
+              className="lg:w-1/3 w-3/4 p-6"
+              src="https://i.imgur.com/7NGaqM4.png"
+            />
+          </div>
         </div>
       </div>
       <div className="flex xl:flex-row flex-col items-center p-6 justify-center bg-white">

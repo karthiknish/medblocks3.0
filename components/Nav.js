@@ -90,7 +90,7 @@ export default function Nav() {
                   <a
                     href="/products"
                     className={`button cursor-pointer px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-gray-600 hover:opacity-75 hover:bg-gray-200 rounded ${
-                      router.route === "products" && "bg-gray-200"
+                      router.route === "/products" && "bg-gray-200"
                     }`}
                   >
                     Products
