@@ -72,7 +72,7 @@ function IndexSection({ refer }) {
           <div className="flex-1">
             <h3 className="text-3xl font-serif">Technology that gets the Job Done</h3>
             <p className="mt-10 xl:mt-3">
-              The Healthcare IT space is filled with standards, abbreviations and legacy systems. If you're think you're lost, you're not alone.
+              The Healthcare IT space is filled with standards, abbreviations and legacy systems.
               We provide you with a bundle of open-source microservices and tools that get the job done.
               So instad of worrying about setting up a FHIR server, or reinventing authentication, you can start focusing on your application's logic.
             </p>
@@ -85,9 +85,9 @@ function IndexSection({ refer }) {
           <div className="flex-1">
             <h3 className="text-3xl font-serif">Healthcare Apps Ecosystem</h3>
             <p className="mt-10 xl:mt-3">
-              Every hospital needs modules like Demographics, Medication, RIS PACS and Labs. A lot of work is required to create and maintain such modules.
-              Deploying these as open-source standalone apps, on a common data model benefits everyone.
-              Work on your own specialized app for the clinic and use existing open-source software for common use cases like e-prescription and labs.
+              Writing software for healthcare is hard-work.
+              Deploying these as standalone apps, on a common data model using openEHR archetypes and FHIR profiles benefits everyone.
+              Work on your own specialized app for the clinic and use existing apps for common use cases like e-prescription, labs and demographics.
               And maybe one day, publish your app for the world to use!
             </p>
           </div>
