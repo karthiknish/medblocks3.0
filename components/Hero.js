@@ -17,7 +17,7 @@ export default function Hero() {
   const ref = useRef();
   return (
     <>
-      <div className="flex max-w-7xl m-auto justify-center items-center flex-wrap xl:flex-nowrap">
+      <div className="flex max-w-7xl m-auto justify-center items-center flex-wrap xl:flex-nowrap xl:my-44">
         <div className="">
           <h3 className="font-serif text-gray-900 text-4xl md:text-5xl text-secondary text-center py-10 mx-10">
             Your stack for building modern healthcare applications
@@ -60,13 +60,13 @@ export default function Hero() {
                   alignItems: "center",
                   borderRadius: "5px",
                   padding: "10px",
-                  height: "100px",
+                  height: "50px",
                   zIndex: 10,
                 }}
               >
                 <img
                   width="60"
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Oauth_logo.svg/598px-Oauth_logo.svg.png"
+                  src="/oauth2_logo.svg"
                 />
               </motion.div>
             </li>

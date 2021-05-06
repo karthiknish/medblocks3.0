@@ -6,6 +6,8 @@ import * as animationData3 from "../lottie/update.json";
 import * as animationData4 from "../lottie/ui-blocks.json";
 import * as animationData5 from "../lottie/vs-code.json";
 import * as animationData6 from "../lottie/consultation.json";
+import lotteAnimation from '../lottie/analytics.json';
+
 function IndexSection({ refer }) {
   const defaultOptions1 = {
     loop: true,
@@ -26,7 +28,7 @@ function IndexSection({ refer }) {
   const defaultOptions3 = {
     loop: true,
     autoplay: true,
-    animationData: animationData3,
+    animationData: lotteAnimation,
     rendererSettings: {
       preserveAspectRatio: "xMidYMid slice",
     },
@@ -55,52 +57,50 @@ function IndexSection({ refer }) {
       preserveAspectRatio: "xMidYMid slice",
     },
   };
-  return (
-    <>
-      <div
-        ref={refer}
-        className="flex flex-col mt-14 bg-gray-100 xxs:p-6 lg:p-2"
-      >
-        <div className="flex justify-center items-center">
-          <h1 className="text-center mt-6 text-head ">What we Do</h1>
-        </div>
-        <div className="flex flex-col xl:flex-row items-center">
-          <div className="lg:w-1/3 w-1/2">
+  return <div>
+    <div
+      ref={refer}
+      className="flex flex-col  bg-gray-100"
+    >
+      <div className="max-w-7xl m-auto px-10 space-y-14">
+
+
+        <div className="flex flex-col md:flex-row items-center max-w-5xl m-auto">
+          <div className="flex-1 max-w-lg">
             <Lottie options={defaultOptions1} />
           </div>
-          {/* <img className=" w-full md:w-1/2 xl:w-1/3" src="/gif/develop.gif" /> */}
-          <div className="w-full xl:w-1/4 flex flex-col mx-auto xl:items-start items-center">
-            <h3 className="text-head">Develop</h3>
-            <p className="mt-10 xl:mt-3 text-center xl:text-left">
-              Develop for all your users' devices with just one codebase. Add
-              fast refresh, true native capabilities, and your creativity, and
-              you'll have the app your users want in no time.
+          <div className="flex-1">
+            <h3 className="text-3xl font-serif">Technology that gets the Job Done</h3>
+            <p className="mt-10 xl:mt-3">
+              The Healthcare IT space is filled with standards, abbreviations and legacy systems. If you're think you're lost, you're not alone.
+              We provide you with a bundle of open-source microservices and tools that get the job done.
+              So instad of worrying about setting up a FHIR server, or reinventing authentication, you can start focusing on your application's logic.
             </p>
           </div>
         </div>
-        <div className="flex flex-col xl:flex-row-reverse items-center">
-          <div className="lg:w-1/3 w-1/2">
+        <div className="flex flex-col md:flex-row items-center max-w-5xl m-auto">
+          <div className="flex-1 max-w-lg md:order-2">
             <Lottie options={defaultOptions2} />
           </div>
-          <div className="w-full xl:w-1/4 flex flex-col mx-auto xl:items-start p-6 xl:p-0 items-center">
-            <h3 className="text-head">Build</h3>
-            <p className="mt-10 xl:mt-3 text-center xl:text-left">
-              Ready to ship? Let us do the heavy lifting. Expo handles the
-              gritty parts of building for each app store so you don't need
-              Xcode or Android Studio to get your app into people's hands.
+          <div className="flex-1">
+            <h3 className="text-3xl font-serif">Healthcare Apps Ecosystem</h3>
+            <p className="mt-10 xl:mt-3">
+              Every hospital needs modules like Demographics, Medication, RIS PACS and Labs. A lot of work is required to create and maintain such modules.
+              Deploying these as open-source standalone apps, on a common data model benefits everyone.
+              Work on your own specialized app for the clinic and use existing open-source software for common use cases like e-prescription and labs.
+              And maybe one day, publish your app for the world to use!
             </p>
           </div>
-        </div>{" "}
-        <div className="flex flex-col xl:flex-row items-center">
-          <div className="lg:w-1/3 w-1/2">
+        </div>
+        <div className="flex flex-col md:flex-row items-center max-w-5xl m-auto">
+          <div className="flex-1 max-w-lg">
             <Lottie options={defaultOptions3} />
           </div>
-          <div className="w-full xl:w-1/4 flex flex-col mx-auto xl:items-start items-center">
-            <h3 className="text-head">Update</h3>
-            <p className="mt-10 xl:mt-3 text-center xl:text-left">
-              Shipped a bug? No worries: with one command, you can deploy a fix
-              that your users will see instantly, without having to re-download
-              your app.
+          <div className="flex-1">
+            <h3 className="text-3xl font-serif">Data Unlocked</h3>
+            <p className="mt-10 xl:mt-3">
+              With proper clinical modelling and powerful tools, unlock the real value in clinical data. From Clinical Decision Support to Population Level Research, AQL can help you answer any clinical question.
+              For Business Analytics, crunch your data with ease by using well defined FHIR Profiles for common use cases like Patient Encounter, Invoices and Insurance Claims.
             </p>
           </div>
         </div>
@@ -212,8 +212,9 @@ function IndexSection({ refer }) {
           </h6>
         </div>
       </div>
-    </>
-  );
+    </div>
+  </div>
+
 }
 
 export default IndexSection;
