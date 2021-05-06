@@ -17,7 +17,7 @@ export default function Hero() {
   const ref = useRef();
   return (
     <>
-      <div className="flex justify-center items-center flex-wrap xl:flex-nowrap">
+      <div className="flex max-w-7xl m-auto justify-center items-center flex-wrap xl:flex-nowrap">
         <div className="">
           <h3 className="font-serif text-gray-900 text-4xl md:text-5xl text-secondary text-center py-10 mx-10">
             Your stack for building modern healthcare applications
