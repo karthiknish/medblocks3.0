@@ -116,7 +116,7 @@ function Item({ color1, words, image, color2 }) {
       <motion.div
         layout
         style={{
-          backgroundImage: `url(${image}),linear-gradient(45deg,${color1},${color2})`,
+          backgroundImage: `url(${image}),linear-gradient(90deg,${color1},${color2})`,
           height: "100px",
           padding: "15px",
           borderRadius: 5,
@@ -128,7 +128,7 @@ function Item({ color1, words, image, color2 }) {
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
           backgroundSize: "contain",
-          border: `${words.includes("You") && "5px dashed red"}`,
+          border: `${words.includes("You") && "2px dashed red"}`,
         }}
         whileHover={{
           scale: 1.03,
@@ -149,7 +149,7 @@ function Item({ color1, words, image, color2 }) {
       >
         {words && !image && (
           <p
-            className={`text-center text-white ${words.includes("Your") && "text-red-500"
+            className={`text-center text-white font-semibold ${words.includes("Your") && "text-red-500"
               }`}
           >
             {words}
@@ -163,15 +163,15 @@ function Item({ color1, words, image, color2 }) {
 const items1 = [100, 100, 100, 100];
 const items2 = [100, 100, 100];
 
-const color1 = ["#56adff", "#666666", "#ddb500", "#0385af"];
-const color2 = ["#D6E8F9", "#ededed", "#fffa9b", "#94dff8"];
+const color1 = ["#A5F3FC", "#93C5FD", "#F59E0B", "#0385af"];
+const color2 = ["#93C5FD", "#FCD34D", "#DC2626", "#94dff8"];
 const image1 = [
   "/openehr.png",
-  "https://www.signstoyou.com/signs/previewimages/high-double-arrow-shaped-3876.png",
+  "/double-arrow.svg",
   "/fhir.png",
   "/snomed.png",
 ];
-const color3 = ["#001e56", "#8e389e", "white"];
+const color3 = ["#001e56", "#C084FC", "white"];
 const color4 = ["#1c6bff", "#3090C7", "white"];
 const words1 = ["openEHR", `Integration Engine`, "FHIR", "SNOMED"];
 const words2 = ["Medication", "Demographics", "Your Next app?"];
