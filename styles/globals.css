@@ -2,15 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 html,
-body {
+/* body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu,
-    Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif !important;
   scroll-behavior: smooth;
   overflow-x: hidden;
+} */
+
+@keyframes spin {
+  100% {
+    transform: rotateZ(360deg);
+  }
 }
 
+strong {
+  @apply text-gray-800;
+}
+/*
 @layer base {
   h1 {
     @apply text-5xl !important;
@@ -90,4 +98,4 @@ body::-webkit-scrollbar-thumb {
 ::-moz-selection {
   background: #9ae266;
   color: white;
-}
+} */

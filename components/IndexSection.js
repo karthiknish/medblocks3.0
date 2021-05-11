@@ -6,6 +6,9 @@ import * as animationData3 from "../lottie/update.json";
 import * as animationData4 from "../lottie/ui-blocks.json";
 import * as animationData5 from "../lottie/vs-code.json";
 import * as animationData6 from "../lottie/consultation.json";
+import lotteAnimation from '../lottie/analytics.json';
+import Section from './section'
+
 function IndexSection({ refer }) {
   const defaultOptions1 = {
     loop: true,
@@ -26,7 +29,7 @@ function IndexSection({ refer }) {
   const defaultOptions3 = {
     loop: true,
     autoplay: true,
-    animationData: animationData3,
+    animationData: lotteAnimation,
     rendererSettings: {
       preserveAspectRatio: "xMidYMid slice",
     },
@@ -55,57 +58,55 @@ function IndexSection({ refer }) {
       preserveAspectRatio: "xMidYMid slice",
     },
   };
-  return (
-    <>
-      <div
-        ref={refer}
-        className="flex flex-col mt-14 bg-gray-100 xxs:p-6 lg:p-2"
-      >
-        <div className="flex justify-center items-center">
-          <h1 className="text-center mt-6 text-head ">What we Do</h1>
+  return <div>
+    <Section className="bg-gray-100">
+
+      <h3 className="font-serif text-gray-900 text-4xl md:text-5xl text-secondary text-center mx-10">
+        Why?
+        </h3>
+
+      <div className="flex flex-col md:flex-row items-center max-w-5xl m-auto">
+
+        <div className="flex-1 max-w-lg">
+          <Lottie options={defaultOptions1} />
         </div>
-        <div className="flex flex-col xl:flex-row items-center">
-          <div className="lg:w-1/3 w-1/2">
-            <Lottie options={defaultOptions1} />
-          </div>
-          {/* <img className=" w-full md:w-1/2 xl:w-1/3" src="/gif/develop.gif" /> */}
-          <div className="w-full xl:w-1/4 flex flex-col mx-auto xl:items-start items-center">
-            <h3 className="text-head">Develop</h3>
-            <p className="mt-10 xl:mt-3 text-center xl:text-left">
-              Develop for all your users' devices with just one codebase. Add
-              fast refresh, true native capabilities, and your creativity, and
-              you'll have the app your users want in no time.
+        <div className="flex-1">
+          <h3 className="text-3xl font-serif">Technology that gets the Job Done</h3>
+          <p className="mt-3">
+            The Healthcare IT space is filled with standards, abbreviations and legacy systems.
+            We provide you with a bundle of open-source microservices and tools that get the job done.
+            So instad of worrying about setting up a FHIR server, or reinventing authentication, you can start focusing on your application's logic.
             </p>
-          </div>
-        </div>
-        <div className="flex flex-col xl:flex-row-reverse items-center">
-          <div className="lg:w-1/3 w-1/2">
-            <Lottie options={defaultOptions2} />
-          </div>
-          <div className="w-full xl:w-1/4 flex flex-col mx-auto xl:items-start p-6 xl:p-0 items-center">
-            <h3 className="text-head">Build</h3>
-            <p className="mt-10 xl:mt-3 text-center xl:text-left">
-              Ready to ship? Let us do the heavy lifting. Expo handles the
-              gritty parts of building for each app store so you don't need
-              Xcode or Android Studio to get your app into people's hands.
-            </p>
-          </div>
-        </div>{" "}
-        <div className="flex flex-col xl:flex-row items-center">
-          <div className="lg:w-1/3 w-1/2">
-            <Lottie options={defaultOptions3} />
-          </div>
-          <div className="w-full xl:w-1/4 flex flex-col mx-auto xl:items-start items-center">
-            <h3 className="text-head">Update</h3>
-            <p className="mt-10 xl:mt-3 text-center xl:text-left">
-              Shipped a bug? No worries: with one command, you can deploy a fix
-              that your users will see instantly, without having to re-download
-              your app.
-            </p>
-          </div>
         </div>
       </div>
-      <div className="flex-col bg:white py-4">
+      <div className="flex flex-col md:flex-row items-center max-w-5xl m-auto">
+        <div className="flex-1 max-w-lg md:order-2">
+          <Lottie options={defaultOptions2} />
+        </div>
+        <div className="flex-1">
+          <h3 className="text-3xl font-serif">Healthcare Apps Ecosystem</h3>
+          <p className="mt-3">
+            Writing software for healthcare is hard-work.
+            Deploying these as standalone apps, on a common data model using openEHR archetypes and FHIR profiles benefits everyone.
+            Work on your own specialized app for the clinic and use existing apps for common use cases like e-prescription, labs and demographics.
+            And maybe one day, publish your app for the world to use!
+            </p>
+        </div>
+      </div>
+      <div className="flex flex-col md:flex-row items-center max-w-5xl mx-auto mb-10">
+        <div className="flex-1 max-w-lg">
+          <Lottie options={defaultOptions3} />
+        </div>
+        <div className="flex-1">
+          <h3 className="text-3xl font-serif">Data Unlocked</h3>
+          <p className="mt-3">
+            With proper clinical modelling and powerful tools, unlock the real value in clinical data. From Clinical Decision Support to Population Level Research, AQL can help you answer any clinical question.
+            For Business Analytics, crunch your data with ease by using well defined FHIR Profiles for common use cases like Patient Encounter, Invoices and Insurance Claims.
+            </p>
+        </div>
+      </div>
+    </Section>
+    {/* <div className="flex-col bg:white py-4">
         <div className="flex justify-center mt-4">
           <h1 className="text-center text-head">Our Products</h1>
         </div>
@@ -145,75 +146,114 @@ function IndexSection({ refer }) {
             </div>
           </div>
         </div>
-        <div className="flex flex-col justify-center p-6 bg-gray-100">
-          <h2 className="text-center text-head ">Other Tech Used</h2>
-          <div className="flex lg:flex-row flex-col justify-center items-center lg:p-16 p-4">
-            <motion.div
-              whileHover={{
-                scale: 1.01,
-                boxShadow: "3px 3px 3px 3px rgba(0,0,0,0.15)",
-              }}
-              className="flex-col flex items-center w-1/2 lg:w-1/3 m-4"
-            >
-              <img src="https://hapifhir.io/hapi-fhir/images/logos/raccoon-forwards.png" />
-              <img src="https://hapifhir.io/hapi-fhir/images/logos/small-logo.png" />
-            </motion.div>
-            <motion.img
-              whileHover={{
-                scale: 1.01,
-                boxShadow: "3px 3px 3px 3px rgba(0,0,0,0.15)",
-              }}
-              className="lg:w-1/3 w-full m-4 p-6"
-              src="https://ehrbase.org/wp-content/uploads/2021/05/ehrbase_red5-1.png"
-            />
-            <motion.img
-              whileHover={{
-                scale: 1.01,
-                boxShadow: "3px 3px 3px 3px rgba(0,0,0,0.15)",
-              }}
-              className="lg:w-1/3 w-3/4 p-6"
-              src="https://i.imgur.com/7NGaqM4.png"
-            />
+        </div> */}
+    <Section>
+      <h2 className="font-serif text-gray-900 text-4xl md:text-5xl text-center mb-10">Our Projects</h2>
+      <div className="flex flex-col gap-3 md:flex-row">
+        <div className="flex md:w-1/2 flex-col md:flex-row items-center shadow-lg border border-gray-100 rounded-lg p-8">
+          <div className="flex-1">
+            <span class="flex items-end gap-3">
+              <img src="https://i.imgur.com/JbhZCX3.png" className="w-8"></img>
+              <h3 className="text-xl font-semibold">Medblocks UI</h3>
+            </span>
+            <p className="mt-3">
+              Web components for fast and interactive UIs compliant with openEHR and FHIR.
+            </p>
+            <a target="_blank" href="https://github.com/sidharthramesh/medblocks-ui" className="mt-10 rounded-md bg-transparent gap-2 inline-flex items-center hover:bg-gray-500 text-gray-700 font-semibold hover:text-white py-2 px-4 border border-gray-500 hover:border-transparent">
+              <svg className="w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-github" viewBox="0 0 16 16">
+                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+              </svg>
+              <span>
+                Github
+      </span>
+            </a>
+          </div>
+        </div>
+        <div className="flex md:w-1/2 flex-col md:flex-row items-center shadow-lg border border-gray-100 rounded-lg p-8">
+          <div className="flex-1">
+            <span class="flex items-end gap-3">
+              <img src="vscode.png" className="w-8"></img>
+              <h3 className="text-xl font-semibold">Medblocks VSCode Extension</h3>
+            </span>
+            <p className="mt-3">
+              VSCode Extension to work with webcomponents using openEHR templates and FHIR profiles
+            </p>
+            <a target="_blank" href="https://github.com/sidharthramesh/vscode-medblocks-ui" className="mt-10 rounded-md bg-transparent gap-2 inline-flex items-center hover:bg-gray-500 text-gray-700 font-semibold hover:text-white py-2 px-4 border border-gray-500 hover:border-transparent">
+              <svg className="w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-github" viewBox="0 0 16 16">
+                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+              </svg>
+              <span>
+                Github
+      </span>
+            </a>
           </div>
         </div>
       </div>
-      <div className="flex xl:flex-row flex-col items-center p-6 justify-center bg-white">
-        <h2 className="text-center xl:w-1/3 w-full text-head">
-          Want to work with us?
-        </h2>
+    </Section>
+    <div className="flex flex-col space-y-10 py-20 bg-gray-100">
+      <h2 className="font-serif text-gray-900 text-4xl md:text-5xl text-center">Technology Proudly Used</h2>
+      <div className="flex flex-row gap-10 flex-wrap justify-center items-center">
+        <a target="_blank"
+          href="https://hapifhir.io/"
+          className="w-72 p-7 flex flex-col items-center gap-1"
+        >
+          <img className="w-32" src="https://hapifhir.io/hapi-fhir/images/logos/raccoon-forwards.png" />
+          <img src="https://hapifhir.io/hapi-fhir/images/logos/small-logo.png" />
 
-        <div className="xl:w-1/3 w-1/2">
+        </a>
+        <a target="_blank" className="w-72 p-3" href="https://ehrbase.org/">
+          <img
+            src="https://ehrbase.org/wp-content/uploads/2021/05/ehrbase_red5-1.png"
+          />
+        </a>
+        <a target="_blank" href="https://lit.dev/" className="w-72 p-10">
+          <img
+            src="/lit.svg"
+          />
+        </a>
+        <a target="_blank" className="w-72 p-3 text-4xl flex gap-2 items-center" href="https://github.com/wardle/hermes">
+          <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+          </svg>
+          <span className="font-light text-center">wardle/hermes</span>
+        </a>
+        <a target="_blank" href="https://www.keycloak.org/" className="w-72 p-5">
+          <img
+            src="/Keycloak.png"
+          />
+        </a>
+      </div>
+    </div>
+
+    <Section>
+      <div className="flex flex-col md:flex-row items-center justify-center">
+        <div className="flex-1 space-y-3 order-2">
+          <h2 className="font-serif text-gray-900 text-4xl md:text-5xl">
+            Want to work with us?
+              </h2>
+          <p className="px-3">
+            You want to change the status quo, and so do we!
+              </p>
+          <p className="px-3">
+            Although most of our tools are free and open-source, we are here if you need us.
+            Our team of developers, clinical modellers and data scientists can help take your idea off the ground.
+              </p>
+          <div className="gap-3 flex pt-6 px-3">
+            <a href="./consultation" className="rounded-md bg-transparent gap-2 inline-flex items-center hover:bg-gray-500 text-gray-700 font-semibold hover:text-white py-2 px-4 border border-gray-500 hover:border-transparent">
+              <span>Pricing</span>
+            </a>
+            <a href="mailto:sidharth@medblocks.com" className="rounded-md bg-transparent gap-2 inline-flex items-center  hover:bg-green-700 bg-green-500 font-semibold text-white py-2 px-4 border">
+              <span>Book a consultation</span>
+            </a>
+          </div>
+        </div>
+        <div className="flex-1 max-w-xl">
           <Lottie options={defaultOptions6} />
         </div>
-        <div className="flex flex-col space-y-10 ">
-          <h6 className="text-4xl text-gray-600 font-semibold xl:text-left text-center">
-            Book a consultation{" "}
-            <span className="text-2xl">
-              <motion.a
-                whileHover={{ scale: 1.05 }}
-                className="flex justify-center items-center xl:justify-start"
-                href="/consultation"
-              >
-                Here <img width="20" src="/icons/arrow-right.svg" />
-              </motion.a>
-            </span>
-          </h6>
-          <h6 className="text-4xl text-gray-600 xl:text-left font-semibold text-center">
-            Check for new openings{" "}
-            <span className="text-2xl">
-              <motion.a
-                whileHover={{ scale: 1.05 }}
-                className="flex justify-center items-center xl:justify-start"
-                href="/jobs"
-              >
-                Here <img width="20" src="/icons/arrow-right.svg" />
-              </motion.a>
-            </span>
-          </h6>
-        </div>
       </div>
-    </>
-  );
+    </Section>
+  </div>
+
 }
 
 export default IndexSection;

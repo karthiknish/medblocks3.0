@@ -21,14 +21,14 @@ export default function Nav() {
         <nav className="relative z-10 w-full flex flex-wrap items-center justify-between px-2 py-2 bg-white border-b border-gray-200">
           <div className="w-full px-4 mx-auto flex flex-wrap items-center justify-between">
             <div
-              className={`w-full z-10 relative flex align-baseline justify-between lg:w-auto px-4  lg:justify-start  `}
+              className={`w-full z-10 relative flex align-baseline justify-between md:w-auto px-4  md:justify-start  `}
             >
               <a
-                className="button text-xl xxs:mr-auto  text-gray-500 rounded flex font-bold items-center leading-relaxed mr-4 py-2 whitespace-nowrap focus:outline-none focus:ring focus:border-blue-300 "
+                className="button text-xl xxs:mr-auto text-gray-800 rounded flex font-bold items-center leading-relaxed mr-4 py-2 whitespace-nowrap focus:outline-none focus:ring focus:border-blue-300 "
                 href="/"
               >
-                <img className="mr-2" width="50" src="/logo.png" />
-                MedBlocks
+                <img className="mr-1 w-10 h-10" src="/logo.png" />
+                Medblocks
               </a>
               {!navbarOpen ? (
                 <motion.div
@@ -44,7 +44,7 @@ export default function Nav() {
                       setNavbarOpen(!navbarOpen);
                       setAppear("yes");
                     }}
-                    className="cursor-pointer w-3/4 block lg:hidden outline-none focus:outline-none"
+                    className="cursor-pointer w-3/4 block md:hidden outline-none focus:outline-none"
                   />
                 </motion.div>
               ) : (
@@ -60,14 +60,14 @@ export default function Nav() {
                       setAppear("no");
                       setprodMob(false);
                     }}
-                    className="cursor-pointer w-3/4 my-auto block lg:hidden outline-none focus:outline-none"
+                    className="cursor-pointer w-3/4 my-auto block md:hidden outline-none focus:outline-none"
                   />
                 </motion.div>
               )}
             </div>
 
             <div
-              className={`lg:flex-grow items-center ${mobileNav && "w-full"}`}
+              className={`md:flex-grow items-center`}
             >
               <motion.ul
                 inital={{
@@ -78,37 +78,13 @@ export default function Nav() {
                   y: appear === "" ? 1 : 0,
                   opacity: appear === "" ? 1 : appear === "yes" ? 1 : 0,
                 }}
-                className={`lg:flex lg:justify-end  ${
+                className={`md:flex md:justify-end  ${
                   navbarOpen ? "block" : "hidden"
                 } list-none ml-auto`}
               >
-                <li
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  className={`nav-item `}
-                >
-                  <a
-                    href="/products"
-                    className={`button cursor-pointer px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-gray-600 hover:opacity-75 hover:bg-gray-200 rounded ${
-                      router.route === "/products" && "bg-gray-200"
-                    }`}
-                  >
-                    Products
-                  </a>
-                </li>
                 <li className="nav-item">
                   <a
-                    className={`button px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-gray-600 hover:opacity-75 hover:bg-gray-200 rounded ${
-                      router.route === "/jobs" && "bg-gray-200"
-                    }`}
-                    href="/jobs"
-                  >
-                    Jobs
-                  </a>
-                </li>{" "}
-                <li className="nav-item">
-                  <a
-                    className={`button px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-gray-600 hover:opacity-75 hover:bg-gray-200 rounded ${
+                    className={`button px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-gray-700  hover:bg-gray-200 rounded ${
                       router.route === "/consultation" && "bg-gray-200"
                     }`}
                     href="/consultation"
@@ -119,7 +95,7 @@ export default function Nav() {
                 <li className="nav-item">
                   <a
                     target="_blank"
-                    className="button px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-gray-600 hover:opacity-75 hover:bg-gray-200 rounded"
+                    className="button px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-gray-700  hover:bg-gray-200 rounded"
                     href="https://blog.medblocks.org/"
                   >
                     Blog
@@ -128,8 +104,8 @@ export default function Nav() {
                 <li className="nav-item">
                   <a
                     target="_blank"
-                    className="button px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-gray-600 hover:opacity-75 hover:bg-gray-200 rounded"
-                    href="https://github.com/sidharthramesh/medblocks"
+                    className="button px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-gray-700  hover:bg-gray-200 rounded"
+                    href="https://github.com/sidharthramesh/medblocks-ui"
                   >
                     Github
                   </a>
