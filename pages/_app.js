@@ -9,7 +9,7 @@ function MyApp({ Component, pageProps }) {
     <>
       <Nav />
       <Component {...pageProps} />
-      <Scroll />
+      {/* <Scroll /> */}
       <Footer />
     </>
   );
