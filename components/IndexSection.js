@@ -1,15 +1,11 @@
-import { motion } from "framer-motion";
 import Lottie from "react-lottie";
 import * as animationData1 from "../lottie/develop.json";
 import * as animationData2 from "../lottie/build.json";
-import * as animationData3 from "../lottie/update.json";
-import * as animationData4 from "../lottie/ui-blocks.json";
-import * as animationData5 from "../lottie/vs-code.json";
 import * as animationData6 from "../lottie/consultation.json";
 import lotteAnimation from "../lottie/analytics.json";
 import Section from "./section";
 
-function IndexSection({ refer }) {
+function IndexSection() {
   const defaultOptions1 = {
     loop: true,
     autoplay: true,
@@ -34,22 +30,6 @@ function IndexSection({ refer }) {
       preserveAspectRatio: "xMidYMid slice",
     },
   };
-  const defaultOptions4 = {
-    loop: true,
-    autoplay: true,
-    animationData: animationData4,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  };
-  const defaultOptions5 = {
-    loop: true,
-    autoplay: true,
-    animationData: animationData5,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  };
   const defaultOptions6 = {
     loop: true,
     autoplay: true,
@@ -66,7 +46,7 @@ function IndexSection({ refer }) {
         </h3>
 
         <div className="flex flex-col md:flex-row items-center max-w-5xl m-auto">
-          <div className="flex-1 max-w-lg">
+          <div className="flex-1 max-w-lg pointer-events-none">
             <Lottie options={defaultOptions1} />
           </div>
           <div className="flex-1">
@@ -84,10 +64,10 @@ function IndexSection({ refer }) {
           </div>
         </div>
         <div className="flex flex-col md:flex-row items-center max-w-5xl m-auto">
-          <div className="flex-1 max-w-lg md:order-2">
+          <div className="flex-1 max-w-lg md:order-2 pointer-events-none">
             <Lottie options={defaultOptions2} />
           </div>
-          <div className="flex-1">
+          <div className="flex-1  mt-8 lg:mt-0">
             <h3 className="text-3xl font-serif">Healthcare Apps Ecosystem</h3>
             <p className="mt-3">
               Writing software for healthcare is hard-work. Deploying these as
@@ -103,7 +83,7 @@ function IndexSection({ refer }) {
           <div className="flex-1 max-w-lg">
             <Lottie options={defaultOptions3} />
           </div>
-          <div className="flex-1">
+          <div className="flex-1  mt-8 lg:mt-0">
             <h3 className="text-3xl font-serif">Data Unlocked</h3>
             <p className="mt-3">
               With proper clinical modelling and powerful tools, unlock the real
@@ -123,7 +103,7 @@ function IndexSection({ refer }) {
         <div className="flex flex-col gap-3 md:flex-row">
           <div className="flex md:w-1/2 flex-col md:flex-row items-center shadow-lg border border-gray-100 rounded-lg p-8">
             <div className="flex-1">
-              <span class="flex items-end gap-3">
+              <span className="flex items-end gap-3">
                 <img
                   src="https://i.imgur.com/JbhZCX3.png"
                   className="w-8"
@@ -156,7 +136,7 @@ function IndexSection({ refer }) {
           </div>
           <div className="flex md:w-1/2 flex-col md:flex-row items-center shadow-lg border border-gray-100 rounded-lg p-8">
             <div className="flex-1">
-              <span class="flex items-end gap-3">
+              <span className="flex items-end gap-3">
                 <img src="vscode.png" className="w-8"></img>
                 <h3 className="text-xl font-semibold">
                   Medblocks VSCode Extension
