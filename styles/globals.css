@@ -30,6 +30,3 @@ a {
 ul {
   list-style-type: none;
 }
-.filter-white {
-  filter: invert(100%);
-}
