@@ -1,15 +1,11 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { useMediaQuery } from "react-responsive";
 import { useRouter } from "next/router";
 export default function Nav() {
   const [navbarOpen, setNavbarOpen] = useState(false);
   const [appear, setAppear] = useState("");
   const router = useRouter();
 
-  const mobileNav = useMediaQuery({
-    query: "(max-width:1024px)",
-  });
   const variants = {
     open: { rotate: 0 },
     closed: { rotate: 180 },
@@ -58,7 +54,6 @@ export default function Nav() {
                     onClick={() => {
                       setNavbarOpen(!navbarOpen);
                       setAppear("no");
-                      setprodMob(false);
                     }}
                     className="cursor-pointer w-3/4 my-auto block md:hidden outline-none focus:outline-none"
                   />
@@ -66,9 +61,7 @@ export default function Nav() {
               )}
             </div>
 
-            <div
-              className={`md:flex-grow items-center`}
-            >
+            <div className={`md:flex-grow items-center`}>
               <motion.ul
                 inital={{
                   y: appear === "" ? 0 : -100,
