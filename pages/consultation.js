@@ -55,7 +55,8 @@ function consultation() {
           </div>
         </div>{" "}
       </Section>
-      <div className="flex flex-col items-center justify-center w-full max-w-7xl mx-auto">
+      <div className="flex flex-col items-center w-full max-w-7xl mx-auto">
+        <h1 className="font-serif text-2xl mb-10">Standard Sessions</h1>
         <section className="flex flex-col lg:flex-row items-center lg:justify-center w-full lg:px-24  space-x-3">
           <article className="bg-white w-4/5 lg:w-custom mb-10 lg:px-4 px-6 py-10 text-center text-primary-dark rounded-lg shadow-lg">
             <h5 className="font-bold text-base">Standard</h5>
@@ -94,7 +95,7 @@ function consultation() {
             </ul>
           </article>
         </section>
-        <h2 className="mx-auto font-bold text-4xl mb-4">Other Packages</h2>
+        <h1 className="font-serif text-2xl mb-10 mt-20">Packages</h1>
         <section className="flex flex-col lg:flex-row lg:items-start items-center lg:justify-center w-full lg:px-24 space-x-3">
           <article className="bg-white w-4/5 lg:w-custom mb-10 lg:px-4 px-6 py-10 text-center text-primary-dark rounded-lg shadow-lg">
             <h5 className="font-bold text-base">

@@ -237,7 +237,7 @@ function IndexSection() {
                 <span>Pricing</span>
               </a>
               <a
-                href="mailto:sidharth@medblocks.com"
+                href="mailto:sidharth@medblocks.org"
                 className="rounded-md bg-transparent gap-2 inline-flex items-center  hover:bg-green-700 bg-green-500 font-semibold text-white py-2 px-4 border"
               >
                 <span>Book a consultation</span>
