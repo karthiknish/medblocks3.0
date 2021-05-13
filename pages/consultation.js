@@ -11,7 +11,7 @@ function consultation() {
       <Head>
         <title>Consultation | Medblocks</title>
       </Head>
-      <Section>
+      <Section className="text-gray-800">
         <h1 className="font-serif text-3xl mb-10">Consultation Pricing</h1>
         <div className="space-y-10">
           <p>
@@ -48,17 +48,17 @@ function consultation() {
           <div>
             <a
               href="mailto:sidharth@medblocks.org"
-              className="rounded-mdhover:bg-green-700 mt-5 bg-green-500 font-semibold text-white py-2 px-4 border"
+              className="rounded-md hover:bg-green-700 mt-5 bg-green-500 font-semibold text-white py-2 px-4 border"
             >
               <span>Send Email</span>
             </a>
           </div>
         </div>{" "}
       </Section>
-      <div className="flex flex-col items-center w-full max-w-7xl mx-auto">
+      <div className="flex flex-col items-center w-full max-w-7xl mx-auto text-gray-800">
         <h1 className="font-serif text-2xl mb-10">Standard Sessions</h1>
         <section className="flex flex-col lg:flex-row items-center lg:justify-center w-full lg:px-24  space-x-3">
-          <article className="bg-white w-4/5 lg:w-custom mb-10 lg:px-4 px-6 py-10 text-center text-primary-dark rounded-lg shadow-lg">
+          <article className="bg-white w-4/5 lg:w-custom mb-10 lg:px-4 px-6 py-10 text-center text-primary-dark rounded-lg shadow-lg border border-gray-100">
             <h5 className="font-bold text-base">Standard</h5>
             <h2 className="pb-4 flex justify-center items-center font-bold border-b border-gray-300">
               <span className="text-3xl mt-3 mr-1">₹</span>
@@ -75,14 +75,14 @@ function consultation() {
           </article>
 
           <article
-            className="w-4/5 lg:w-custom mb-10 lg:px-4 px-6 py-10 text-center text-white rounded-lg shadow-lg"
+            className="w-4/5 lg:w-custom mb-10 lg:px-4 px-6 py-10 text-center text-white rounded-lg shadow-lg border border-gray-100"
             style={{
               backgroundImage:
                 "linear-gradient(90deg,	#A9A9A9 0%, 	#808080 100%)",
             }}
           >
             <h5 className="font-bold text-base ">Monthly</h5>
-            <h2 className="font-bold pb-4 mt-2 items-center border-b border-gray-100 flex justify-center">
+            <h2 className="font-bold pb-4 mt-2 items-center flex justify-center">
               <span className="text-3xl mt-6 mr-1">₹</span>
               <span className="text-6xl ">20,000 </span>
               <span className="ml-2 mt-3"> / month</span>
@@ -97,9 +97,9 @@ function consultation() {
         </section>
         <h1 className="font-serif text-2xl mb-10 mt-20">Packages</h1>
         <section className="flex flex-col lg:flex-row lg:items-start items-center lg:justify-center w-full lg:px-24 space-x-3">
-          <article className="bg-white w-4/5 lg:w-custom mb-10 lg:px-4 px-6 py-10 text-center text-primary-dark rounded-lg shadow-lg">
+          <article className="bg-white w-4/5 lg:w-custom mb-10 lg:px-4 px-6 py-10 text-center text-primary-dark rounded-lg shadow-lg border border-gray-100">
             <h5 className="font-bold text-base">
-              openEHR Starter Pack - 4 Sessions
+              openEHR Starter Pack
             </h5>
             <h2 className="pb-4 flex justify-center items-center font-bold border-b border-gray-300">
               <span className="text-3xl mt-3 mr-1">₹</span>
@@ -160,9 +160,9 @@ function consultation() {
               )}
             </AnimatePresence>
           </article>
-          <article className="w-4/5 lg:w-custom mb-10 lg:px-4 px-6 py-10 text-center rounded-lg shadow-lg">
+          <article className="w-4/5 lg:w-custom mb-10 lg:px-4 px-6 py-10 text-center rounded-lg shadow-lg border border-gray-100">
             <h5 className="font-bold text-base ">
-              FHIR Starter Pack - 4 Sessions
+              FHIR Starter Pack
             </h5>
             <h2 className="font-bold pb-4 mt-2 items-center border-b border-gray-100 flex justify-center">
               <span className="text-3xl mt-6 mr-1">₹</span>
@@ -224,9 +224,9 @@ function consultation() {
               )}
             </AnimatePresence>
           </article>
-          <article className="bg-white w-4/5 lg:w-custom mb-10 lg:px-4 px-6 py-10 text-center text-primary-dark rounded-lg shadow-lg">
+          <article className="bg-white w-4/5 lg:w-custom mb-10 lg:px-4 px-6 py-10 text-center text-primary-dark rounded-lg shadow-lg border border-gray-100">
             <h5 className="font-bold text-base">
-              SNOMED Starter Pack - 4 Sessions
+              SNOMED Starter Pack
             </h5>
             <h2 className="pb-4 flex justify-center items-center font-bold border-b border-gray-300">
               <span className="text-3xl mt-3 mr-1">₹</span>
