@@ -5,11 +5,11 @@ export default function Hero() {
   return (
     <>
       <div className="flex max-w-7xl m-auto justify-center items-center flex-wrap xl:flex-nowrap xl:my-44">
-        <div className="">
+        <div>
           <h3 className="font-serif text-gray-900 text-4xl md:text-5xl text-secondary text-center py-10 mx-10">
             Your stack for building modern healthcare applications
           </h3>
-          <div className={`gap-3 justify-center p-10 hidden xl:flex`}>
+          <div className="gap-3 justify-center p-10 hidden xl:flex">
             <a
               href=""
               className="rounded-md bg-transparent gap-2 inline-flex items-center hover:bg-gray-500 text-gray-700 font-semibold hover:text-white py-2 px-4 border border-gray-500 hover:border-transparent"

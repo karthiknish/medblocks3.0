@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import { useRouter } from "next/router";
 export default function Nav() {
   const [navbarOpen, setNavbarOpen] = useState(false);
-  const [appear, setAppear] = useState("");
   const router = useRouter();
 
   const variants = {
@@ -13,11 +12,11 @@ export default function Nav() {
 
   return (
     <>
-      <div className="sticky top-0 flex z-10  flex-wrap">
-        <nav className="relative z-10 w-full flex flex-wrap items-center justify-between px-2 py-2 bg-white border-b border-gray-200">
+      <div className="flex flex-wrap">
+        <nav className="w-full flex flex-wrap items-center justify-between px-2 py-2 bg-white border-b border-gray-200">
           <div className="w-full px-4 mx-auto flex flex-wrap items-center justify-between">
             <div
-              className={`w-full z-10 relative flex align-baseline justify-between md:w-auto px-4  md:justify-start  `}
+              className={`w-full flex align-baseline justify-between md:w-auto px-4  md:justify-start  `}
             >
               <a
                 className="button text-xl xxs:mr-auto text-gray-800 rounded flex font-bold items-center leading-relaxed mr-4 py-2 whitespace-nowrap focus:outline-none focus:ring focus:border-blue-300 "
@@ -28,32 +27,28 @@ export default function Nav() {
               </a>
               {!navbarOpen ? (
                 <motion.div
-                  className="my-auto"
                   variants={variants}
                   animate={navbarOpen ? "open" : "closed"}
+                  className="my-auto"
                 >
                   <img
                     src="/icons/hamburger.svg"
-                    variants={variants}
-                    animate={navbarOpen ? "open" : "closed"}
                     onClick={() => {
                       setNavbarOpen(!navbarOpen);
-                      setAppear("yes");
                     }}
                     className="cursor-pointer w-3/4 block md:hidden outline-none focus:outline-none"
                   />
                 </motion.div>
               ) : (
                 <motion.div
+                  variants={variants}
+                  animate={navbarOpen ? "open" : "closed"}
                   className="my-auto"
-                  initial={{ scale: 0 }}
-                  animate={{ scale: navbarOpen ? 1 : 0 }}
                 >
                   <img
                     src="/icons/close.svg"
                     onClick={() => {
                       setNavbarOpen(!navbarOpen);
-                      setAppear("no");
                     }}
                     className="cursor-pointer w-3/4 my-auto block md:hidden outline-none focus:outline-none"
                   />
@@ -61,21 +56,13 @@ export default function Nav() {
               )}
             </div>
 
-            <div className={`md:flex-grow items-center`}>
-              <motion.ul
-                inital={{
-                  y: appear === "" ? 0 : -100,
-                  opacity: appear === "" ? 1 : 0,
-                }}
-                animate={{
-                  y: appear === "" ? 1 : 0,
-                  opacity: appear === "" ? 1 : appear === "yes" ? 1 : 0,
-                }}
+            <div className="md:flex-grow items-center">
+              <ul
                 className={`md:flex md:justify-end  ${
                   navbarOpen ? "block" : "hidden"
                 } list-none ml-auto`}
               >
-                <li className="nav-item">
+                <li>
                   <a
                     className={`button px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-gray-700  hover:bg-gray-200 rounded ${
                       router.route === "/consultation" && "bg-gray-200"
@@ -85,7 +72,7 @@ export default function Nav() {
                     Consultation
                   </a>
                 </li>
-                <li className="nav-item">
+                <li>
                   <a
                     target="_blank"
                     className="button px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-gray-700  hover:bg-gray-200 rounded"
@@ -94,7 +81,7 @@ export default function Nav() {
                     Blog
                   </a>
                 </li>
-                <li className="nav-item">
+                <li>
                   <a
                     target="_blank"
                     className="button px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-gray-700  hover:bg-gray-200 rounded"
@@ -103,7 +90,7 @@ export default function Nav() {
                     Github
                   </a>
                 </li>
-              </motion.ul>
+              </ul>
             </div>
           </div>
         </nav>

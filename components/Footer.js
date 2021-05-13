@@ -5,7 +5,6 @@ export default function Footer() {
         © 2021 Medblocks. All rights reserved. <wbr />
         For communications email{" "}
         <a
-          className="font-bold"
           className="text-blue-500 font-semibold hover:text-blue-400"
           href="mailto:sidharth@medblocks.com"
         >
