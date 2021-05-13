@@ -37,7 +37,6 @@ export default function Hero() {
         </div>
         <motion.div
           className="w-max m-5 xl:w-1/2 xl:m-10"
-          variants={anim}
           initial="hidden"
           animate="show"
         >
@@ -157,9 +156,3 @@ const color3 = ["#001e56", "#C084FC", "white"];
 const color4 = ["#1c6bff", "#3090C7", "white"];
 const words1 = ["openEHR", `Integration Engine`, "FHIR", "SNOMED"];
 const words2 = ["Medication", "Labs", "Your Next app?"];
-const anim = {
-  hidden: { y: -100 },
-  show: {
-    y: 0,
-  },
-};

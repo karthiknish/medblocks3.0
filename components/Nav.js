@@ -1,14 +1,8 @@
 import { useState } from "react";
-import { motion } from "framer-motion";
 import { useRouter } from "next/router";
 export default function Nav() {
-  const [navbarOpen, setNavbarOpen] = useState(false);
+  const [navbarOpen, setNavbarOpen] = useState(null);
   const router = useRouter();
-
-  const variants = {
-    open: { rotate: 0 },
-    closed: { rotate: 180 },
-  };
 
   return (
     <>
@@ -26,11 +20,7 @@ export default function Nav() {
                 Medblocks
               </a>
               {!navbarOpen ? (
-                <motion.div
-                  variants={variants}
-                  animate={navbarOpen ? "open" : "closed"}
-                  className="my-auto"
-                >
+                <div className="my-auto">
                   <img
                     src="/icons/hamburger.svg"
                     onClick={() => {
@@ -38,13 +28,9 @@ export default function Nav() {
                     }}
                     className="cursor-pointer w-3/4 block md:hidden outline-none focus:outline-none"
                   />
-                </motion.div>
+                </div>
               ) : (
-                <motion.div
-                  variants={variants}
-                  animate={navbarOpen ? "open" : "closed"}
-                  className="my-auto"
-                >
+                <div className="my-auto">
                   <img
                     src="/icons/close.svg"
                     onClick={() => {
@@ -52,7 +38,7 @@ export default function Nav() {
                     }}
                     className="cursor-pointer w-3/4 my-auto block md:hidden outline-none focus:outline-none"
                   />
-                </motion.div>
+                </div>
               )}
             </div>
 
