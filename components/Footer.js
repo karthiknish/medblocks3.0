@@ -6,9 +6,9 @@ export default function Footer() {
         For communications email{" "}
         <a
           className="text-blue-500 font-semibold hover:text-blue-400"
-          href="mailto:sidharth@medblocks.com"
+          href="mailto:sidharth@medblocks.org"
         >
-          sidharth@medblocks.com
+          sidharth@medblocks.org
         </a>
         .
       </p>
