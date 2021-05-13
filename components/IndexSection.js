@@ -84,7 +84,9 @@ function IndexSection() {
             <Lottie options={defaultOptions3} />
           </div>
           <div className="flex-1  mt-8 lg:mt-0">
-            <h3 className="text-3xl font-serif">Data Unlocked</h3>
+            <h3 className="text-3xl font-serif pointer-events-none">
+              Data Unlocked
+            </h3>
             <p className="mt-3">
               With proper clinical modelling and powerful tools, unlock the real
               value in clinical data. From Clinical Decision Support to

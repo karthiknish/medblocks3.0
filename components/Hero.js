@@ -41,7 +41,7 @@ export default function Hero() {
           initial="hidden"
           animate="show"
         >
-          <motion.ul variants={child} style={{ display: "flex" }}>
+          <ul style={{ display: "flex" }}>
             {items2.map((height, i) => (
               <Item
                 key={i}
@@ -51,8 +51,8 @@ export default function Hero() {
                 words={words2[i]}
               />
             ))}
-          </motion.ul>
-          <motion.ul variants={child}>
+          </ul>
+          <ul>
             <li>
               <motion.div
                 layout
@@ -78,8 +78,8 @@ export default function Hero() {
                 <img width="60" src="/oauth2_logo.svg" />
               </motion.div>
             </li>
-          </motion.ul>
-          <motion.ul variants={child} style={{ display: "flex" }}>
+          </ul>
+          <ul style={{ display: "flex" }}>
             {items1.map((height, i) => (
               <Item
                 key={i}
@@ -90,7 +90,7 @@ export default function Hero() {
                 image={image1[i]}
               />
             ))}
-          </motion.ul>
+          </ul>
         </motion.div>
       </div>
       <LinkButtons className="xl:hidden"></LinkButtons>
@@ -158,16 +158,8 @@ const color4 = ["#1c6bff", "#3090C7", "white"];
 const words1 = ["openEHR", `Integration Engine`, "FHIR", "SNOMED"];
 const words2 = ["Medication", "Labs", "Your Next app?"];
 const anim = {
-  hidden: { opacity: 0, y: -100 },
+  hidden: { y: -100 },
   show: {
-    opacity: 1,
     y: 0,
-    transition: { delayChildren: 0.5, staggerChildren: -1 },
-  },
-};
-const child = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
   },
 };
