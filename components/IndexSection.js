@@ -107,6 +107,7 @@ function IndexSection() {
             <div className="flex-1">
               <span className="flex items-end gap-3">
                 <img
+                  alt="Medblocks"
                   src="https://i.imgur.com/JbhZCX3.png"
                   className="w-8"
                 ></img>
@@ -139,7 +140,7 @@ function IndexSection() {
           <div className="flex md:w-1/2 flex-col md:flex-row items-center shadow-lg border border-gray-100 rounded-lg p-8">
             <div className="flex-1">
               <span className="flex items-end gap-3">
-                <img src="vscode.png" className="w-8"></img>
+                <img alt="VsCode" src="vscode.png" className="w-8"></img>
                 <h3 className="text-xl font-semibold">
                   Medblocks VSCode Extension
                 </h3>
@@ -176,23 +177,37 @@ function IndexSection() {
         </h2>
         <div className="flex flex-row gap-10 flex-wrap justify-center items-center">
           <a
+            rel="noreferrer"
             target="_blank"
             href="https://hapifhir.io/"
             className="w-72 p-7 flex flex-col items-center gap-1"
           >
             <img
+              alt="Hapi FHIR"
               className="w-32"
               src="https://hapifhir.io/hapi-fhir/images/logos/raccoon-forwards.png"
             />
-            <img src="https://hapifhir.io/hapi-fhir/images/logos/small-logo.png" />
+            <img
+              alt="Hapi FHIR text"
+              src="https://hapifhir.io/hapi-fhir/images/logos/small-logo.png"
+            />
           </a>
           <a target="_blank" className="w-72 p-3" href="https://ehrbase.org/">
-            <img src="https://ehrbase.org/wp-content/uploads/2021/05/ehrbase_red5-1.png" />
-          </a>
-          <a target="_blank" href="https://lit.dev/" className="w-72 p-10">
-            <img src="/lit.svg" />
+            <img
+              alt="EHR Base"
+              src="https://ehrbase.org/wp-content/uploads/2021/05/ehrbase_red5-1.png"
+            />
           </a>
           <a
+            rel="noreferrer"
+            target="_blank"
+            href="https://lit.dev/"
+            className="w-72 p-10"
+          >
+            <img alt="Lit Element" src="/lit.svg" />
+          </a>
+          <a
+            rel="noreferrer"
             target="_blank"
             className="w-72 p-3 text-4xl flex gap-2 items-center"
             href="https://github.com/wardle/hermes"
@@ -208,11 +223,12 @@ function IndexSection() {
             <span className="font-light text-center">wardle/hermes</span>
           </a>
           <a
+            rel="noreferrer"
             target="_blank"
             href="https://www.keycloak.org/"
             className="w-72 p-5"
           >
-            <img src="/Keycloak.png" />
+            <img alt="Keycloak" src="/Keycloak.png" />
           </a>
         </div>
       </div>

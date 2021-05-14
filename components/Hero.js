@@ -11,7 +11,9 @@ export default function Hero() {
           </h3>
           <div className="gap-3 justify-center p-10 hidden xl:flex">
             <a
-              href=""
+              rel="noreferrer"
+              target="_blank"
+              href="https://github.com/sidharthramesh/medblocks-ui"
               className="rounded-md bg-transparent gap-2 inline-flex items-center hover:bg-gray-500 text-gray-700 font-semibold hover:text-white py-2 px-4 border border-gray-500 hover:border-transparent"
             >
               <svg
@@ -28,7 +30,9 @@ export default function Hero() {
               <span>Github</span>
             </a>
             <a
-              href=""
+              rel="noreferrer"
+              href="https://medblocks-ui-git-more-stories-sidharthramesh.vercel.app/"
+              target="_blank"
               className="rounded-md bg-transparent gap-2 inline-flex items-center  hover:bg-green-700 hover:border-green-700 bg-green-500 border-green-500 font-semibold text-white py-2 px-4 border"
             >
               <span>Get started</span>
@@ -74,7 +78,7 @@ export default function Hero() {
                   zIndex: 10,
                 }}
               >
-                <img width="60" src="/oauth2_logo.svg" />
+                <img width="60" alt="Oauth" src="/oauth2_logo.svg" />
               </motion.div>
             </li>
           </ul>
@@ -104,7 +108,9 @@ function Item({ color1, words, image, color2 }) {
       <motion.div
         layout
         style={{
-          backgroundImage: `url(${image}),linear-gradient(45deg,${color1},${color2})`,
+          backgroundImage: `url(${
+            image !== undefined ? image : ""
+          }),linear-gradient(45deg,${color1},${color2})`,
           height: "100px",
           padding: "15px",
           borderRadius: 5,

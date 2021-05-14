@@ -16,12 +16,17 @@ export default function Nav() {
                 className="button text-xl xxs:mr-auto text-gray-800 rounded flex font-bold items-center leading-relaxed mr-4 py-2 whitespace-nowrap focus:outline-none focus:ring focus:border-blue-300 "
                 href="/"
               >
-                <img className="mr-1 w-10 h-10" src="/logo.png" />
+                <img
+                  alt="Medblocks"
+                  className="mr-1 w-10 h-10"
+                  src="/logo.png"
+                />
                 Medblocks
               </a>
               {!navbarOpen ? (
                 <div className="my-auto">
                   <img
+                    alt="Menu"
                     src="/icons/hamburger.svg"
                     onClick={() => {
                       setNavbarOpen(!navbarOpen);
@@ -32,6 +37,7 @@ export default function Nav() {
               ) : (
                 <div className="my-auto">
                   <img
+                    alt="Menu"
                     src="/icons/close.svg"
                     onClick={() => {
                       setNavbarOpen(!navbarOpen);
@@ -60,6 +66,7 @@ export default function Nav() {
                 </li>
                 <li>
                   <a
+                    rel="noreferrer"
                     target="_blank"
                     className="button px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-gray-700  hover:bg-gray-200 rounded"
                     href="https://blog.medblocks.org/"
@@ -69,6 +76,7 @@ export default function Nav() {
                 </li>
                 <li>
                   <a
+                    rel="noreferrer"
                     target="_blank"
                     className="button px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-gray-700  hover:bg-gray-200 rounded"
                     href="https://github.com/sidharthramesh/medblocks-ui"
