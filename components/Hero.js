@@ -5,13 +5,15 @@ export default function Hero() {
   return (
     <>
       <div className="flex max-w-7xl m-auto justify-center items-center flex-wrap xl:flex-nowrap xl:my-44">
-        <div className="">
+        <div>
           <h3 className="font-serif text-gray-900 text-4xl md:text-5xl text-secondary text-center py-10 mx-10">
             Your stack for building modern healthcare applications
           </h3>
-          <div className={`gap-3 justify-center p-10 hidden xl:flex`}>
+          <div className="gap-3 justify-center p-10 hidden xl:flex">
             <a
-              href=""
+              rel="noreferrer"
+              target="_blank"
+              href="https://github.com/sidharthramesh/medblocks-ui"
               className="rounded-md bg-transparent gap-2 inline-flex items-center hover:bg-gray-500 text-gray-700 font-semibold hover:text-white py-2 px-4 border border-gray-500 hover:border-transparent"
             >
               <svg
@@ -28,7 +30,9 @@ export default function Hero() {
               <span>Github</span>
             </a>
             <a
-              href=""
+              rel="noreferrer"
+              href="https://medblocks-ui-git-more-stories-sidharthramesh.vercel.app/"
+              target="_blank"
               className="rounded-md bg-transparent gap-2 inline-flex items-center  hover:bg-green-700 hover:border-green-700 bg-green-500 border-green-500 font-semibold text-white py-2 px-4 border"
             >
               <span>Get started</span>
@@ -37,11 +41,10 @@ export default function Hero() {
         </div>
         <motion.div
           className="w-max m-5 xl:w-1/2 xl:m-10"
-          variants={anim}
           initial="hidden"
           animate="show"
         >
-          <motion.ul variants={child} style={{ display: "flex" }}>
+          <ul style={{ display: "flex" }}>
             {items2.map((height, i) => (
               <Item
                 key={i}
@@ -51,8 +54,8 @@ export default function Hero() {
                 words={words2[i]}
               />
             ))}
-          </motion.ul>
-          <motion.ul variants={child}>
+          </ul>
+          <ul>
             <li>
               <motion.div
                 layout
@@ -75,11 +78,11 @@ export default function Hero() {
                   zIndex: 10,
                 }}
               >
-                <img width="60" src="/oauth2_logo.svg" />
+                <img width="60" alt="Oauth" src="/oauth2_logo.svg" />
               </motion.div>
             </li>
-          </motion.ul>
-          <motion.ul variants={child} style={{ display: "flex" }}>
+          </ul>
+          <ul style={{ display: "flex" }}>
             {items1.map((height, i) => (
               <Item
                 key={i}
@@ -90,7 +93,7 @@ export default function Hero() {
                 image={image1[i]}
               />
             ))}
-          </motion.ul>
+          </ul>
         </motion.div>
       </div>
       <LinkButtons className="xl:hidden"></LinkButtons>
@@ -105,7 +108,9 @@ function Item({ color1, words, image, color2 }) {
       <motion.div
         layout
         style={{
-          backgroundImage: `url(${image}),linear-gradient(45deg,${color1},${color2})`,
+          backgroundImage: `url(${
+            image !== undefined ? image : ""
+          }),linear-gradient(45deg,${color1},${color2})`,
           height: "100px",
           padding: "15px",
           borderRadius: 5,
@@ -157,17 +162,3 @@ const color3 = ["#001e56", "#C084FC", "white"];
 const color4 = ["#1c6bff", "#3090C7", "white"];
 const words1 = ["openEHR", `Integration Engine`, "FHIR", "SNOMED"];
 const words2 = ["Medication", "Labs", "Your Next app?"];
-const anim = {
-  hidden: { opacity: 0, y: -100 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: { delayChildren: 0.5, staggerChildren: -1 },
-  },
-};
-const child = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-  },
-};
