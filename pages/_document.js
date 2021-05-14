@@ -26,7 +26,7 @@ class MyDocument extends Document {
             property="og:description"
             content="The stack for modern healthcare applications"
           />
-          <meta property="og:image" content="https://imgur.com/aU4XXbL" />
+          <meta property="og:image" content="https://i.imgur.com/aU4XXbL.png" />
           <meta property="twitter:card" content="summary_large_image" />
           <meta property="twitter:url" content="https://www.medblocks.org/" />
           <meta property="twitter:title" content="Medblocks" />
@@ -34,7 +34,10 @@ class MyDocument extends Document {
             property="twitter:description"
             content="The stack for modern healthcare applications"
           />
-          <meta property="twitter:image" content="https://imgur.com/aU4XXbL" />
+          <meta
+            property="twitter:image"
+            content="https://i.imgur.com/aU4XXbL.png"
+          />
         </Head>
         <body>
           <Main />
