@@ -118,6 +118,7 @@ function IndexSection() {
                 openEHR and FHIR.
               </p>
               <a
+                rel="noreferrer"
                 target="_blank"
                 href="https://github.com/sidharthramesh/medblocks-ui"
                 className="mt-10 rounded-md bg-transparent gap-2 inline-flex items-center hover:bg-gray-500 text-gray-700 font-semibold hover:text-white py-2 px-4 border border-gray-500 hover:border-transparent"
@@ -150,6 +151,7 @@ function IndexSection() {
                 templates and FHIR profiles
               </p>
               <a
+                rel="noreferrer"
                 target="_blank"
                 href="https://github.com/sidharthramesh/vscode-medblocks-ui"
                 className="mt-10 rounded-md bg-transparent gap-2 inline-flex items-center hover:bg-gray-500 text-gray-700 font-semibold hover:text-white py-2 px-4 border border-gray-500 hover:border-transparent"
@@ -192,7 +194,12 @@ function IndexSection() {
               src="https://hapifhir.io/hapi-fhir/images/logos/small-logo.png"
             />
           </a>
-          <a target="_blank" className="w-72 p-3" href="https://ehrbase.org/">
+          <a
+            rel="noreferrer"
+            target="_blank"
+            className="w-72 p-3"
+            href="https://ehrbase.org/"
+          >
             <img
               alt="EHR Base"
               src="https://ehrbase.org/wp-content/uploads/2021/05/ehrbase_red5-1.png"
