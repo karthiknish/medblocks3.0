@@ -1,20 +1,20 @@
-import * as animationData from "../lottie/404.json";
+import Notfound from "../lottie/404.json";
 import Lottie from "react-lottie";
 export default function Custom404() {
   const defaultOptions = {
     loop: true,
     autoplay: true,
-    animationData: animationData,
+    animationData: Notfound,
     rendererSettings: {
       preserveAspectRatio: "xMidYMid slice",
     },
   };
   return (
-    <div className="p-6 flex justify-center items-center h-screen -mt-32 flex-col">
-      <div className="lg:w-1/4 w-full">
+    <div className="flex flex-col h-screen items-center justify-center">
+      <div className="w-1/2 max-w-lg pointer-events-none">
         <Lottie options={defaultOptions} />
       </div>
-      <h3 className="mt-2">404 - Page not Found</h3>
+      <h3 className="mt-2">Page not Found</h3>
     </div>
   );
 }

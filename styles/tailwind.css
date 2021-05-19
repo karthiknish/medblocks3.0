@@ -18,6 +18,9 @@ textarea:-ms-input-placeholder {
   width: -webkit-max-content;
   width: -moz-max-content;
 }
+.w-1\/2 {
+  width: 50%;
+}
 @-webkit-keyframes spin {
   to {
     transform: rotate(1turn);
