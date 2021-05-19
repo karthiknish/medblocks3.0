@@ -1,15 +1,15 @@
 import Lottie from "react-lottie";
-import * as animationData1 from "../lottie/develop.json";
-import * as animationData2 from "../lottie/build.json";
-import * as animationData6 from "../lottie/consultation.json";
-import lotteAnimation from "../lottie/analytics.json";
+import develop from "../lottie/develop.json";
+import build from "../lottie/build.json";
+import consultation from "../lottie/consultation.json";
+import analytics from "../lottie/analytics.json";
 import Section from "./section";
 
 function IndexSection() {
   const defaultOptions1 = {
     loop: true,
     autoplay: true,
-    animationData: animationData1,
+    animationData: develop,
     rendererSettings: {
       preserveAspectRatio: "xMidYMid slice",
     },
@@ -17,7 +17,7 @@ function IndexSection() {
   const defaultOptions2 = {
     loop: true,
     autoplay: true,
-    animationData: animationData2,
+    animationData: build,
     rendererSettings: {
       preserveAspectRatio: "xMidYMid slice",
     },
@@ -25,7 +25,7 @@ function IndexSection() {
   const defaultOptions3 = {
     loop: true,
     autoplay: true,
-    animationData: lotteAnimation,
+    animationData: analytics,
     rendererSettings: {
       preserveAspectRatio: "xMidYMid slice",
     },
@@ -33,7 +33,7 @@ function IndexSection() {
   const defaultOptions6 = {
     loop: true,
     autoplay: true,
-    animationData: animationData6,
+    animationData: consultation,
     rendererSettings: {
       preserveAspectRatio: "xMidYMid slice",
     },
