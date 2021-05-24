@@ -56,7 +56,7 @@ function consultation() {
         </div>{" "}
       </Section>
       <div className="flex flex-col items-center w-full max-w-7xl mx-auto text-gray-800">
-        <h1 className="font-serif text-2xl mb-10">Standard Sessions</h1>
+        <h1 className="font-serif text-3xl mb-10">Standard Sessions</h1>
         <section className="flex flex-col lg:flex-row items-center lg:justify-center w-full lg:px-24  space-x-3">
           <article className="bg-white w-4/5 lg:w-custom mb-10 lg:px-4 px-6 py-10 text-center text-primary-dark rounded-lg shadow-lg border border-gray-100">
             <h5 className="font-bold text-base">Standard</h5>
