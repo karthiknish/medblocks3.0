@@ -69,7 +69,7 @@ export default function Nav() {
                     rel="noreferrer"
                     target="_blank"
                     className="button px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-gray-700  hover:bg-gray-200 rounded"
-                    href="https://medblocks.medium.com/"
+                    href="https://blog.medblocks.org/"
                   >
                     Blog
                   </a>
