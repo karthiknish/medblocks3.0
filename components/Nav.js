@@ -50,15 +50,13 @@ export default function Nav() {
 
             <div className="md:flex-grow items-center">
               <ul
-                className={`md:flex md:justify-end  ${
-                  navbarOpen ? "block" : "hidden"
-                } list-none ml-auto`}
+                className={`md:flex md:justify-end  ${navbarOpen ? "block" : "hidden"
+                  } list-none ml-auto`}
               >
                 <li>
                   <a
-                    className={`button px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-gray-700  hover:bg-gray-200 rounded ${
-                      router.route === "/consultation" && "bg-gray-200"
-                    }`}
+                    className={`button px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-gray-700  hover:bg-gray-200 rounded ${router.route === "/consultation" && "bg-gray-200"
+                      }`}
                     href="/consultation"
                   >
                     Consultation
@@ -79,7 +77,7 @@ export default function Nav() {
                     rel="noreferrer"
                     target="_blank"
                     className="button px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-gray-700  hover:bg-gray-200 rounded"
-                    href="https://github.com/sidharthramesh/medblocks-ui"
+                    href="https://github.com/medblocks"
                   >
                     Github
                   </a>

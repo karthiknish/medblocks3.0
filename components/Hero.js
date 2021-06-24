@@ -13,7 +13,7 @@ export default function Hero() {
             <a
               rel="noreferrer"
               target="_blank"
-              href="https://github.com/sidharthramesh/medblocks-ui"
+              href="https://github.com/medblocks"
               className="rounded-md bg-transparent gap-2 inline-flex items-center hover:bg-gray-500 text-gray-700 font-semibold hover:text-white py-2 px-4 border border-gray-500 hover:border-transparent"
             >
               <svg
