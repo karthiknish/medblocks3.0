@@ -62,7 +62,7 @@ function consultation() {
             <h5 className="font-bold text-base">Standard</h5>
             <h2 className="pb-4 flex justify-center items-center font-bold border-b border-gray-300">
               <span className="text-3xl mt-3 mr-1">₹</span>
-              <span className="text-6xl">3000 </span>
+              <span className="text-6xl">4000 </span>
               <span className="ml-2 mt-3"> / session</span>
             </h2>
             <ul className="text-sm ">
@@ -86,7 +86,7 @@ function consultation() {
             <h2 className="font-bold pb-4 mt-2 items-center flex justify-center border-b border-gray-100">
 
               <span className="text-3xl mt-6 mr-1">₹</span>
-              <span className="text-6xl ">20,000 </span>
+              <span className="text-6xl ">30,000 </span>
               <span className="ml-2 mt-3"> / month</span>
             </h2>
             <ul className=" text-sm ">
@@ -105,7 +105,7 @@ function consultation() {
 
             <h2 className="pb-4 flex justify-center items-center font-bold border-b border-gray-300">
               <span className="text-3xl mt-3 mr-1">₹</span>
-              <span className="text-6xl">10,000 </span>
+              <span className="text-6xl">30,000 </span>
             </h2>
             <ul className="text-sm ">
               <li className="pt-4 pb-4  border-gray-300">
@@ -168,7 +168,7 @@ function consultation() {
             <h2 className="font-bold pb-4 mt-2 items-center border-b border-gray-300 flex justify-center ">
 
               <span className="text-3xl mt-6 mr-1">₹</span>
-              <span className="text-6xl ">10,000 </span>
+              <span className="text-6xl ">30,000 </span>
             </h2>
             <ul className=" text-sm ">
               <li className="pt-4 pb-4 border-gray-200">
@@ -232,7 +232,7 @@ function consultation() {
 
             <h2 className="pb-4 flex justify-center items-center font-bold border-b border-gray-300">
               <span className="text-3xl mt-3 mr-1">₹</span>
-              <span className="text-6xl">10,000 </span>
+              <span className="text-6xl">30,000 </span>
             </h2>
             <ul className="text-sm ">
               <li className="pt-4 pb-4  border-gray-300">
