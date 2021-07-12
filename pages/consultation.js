@@ -59,13 +59,13 @@ function consultation() {
         <h1 className="font-serif text-3xl mb-10">Standard Sessions</h1>
         <section className="flex flex-col lg:flex-row items-center lg:justify-center w-full lg:px-24  space-x-3">
           <article className="bg-white w-4/5 lg:w-custom mb-10 lg:px-4 px-6 py-10 text-center text-primary-dark rounded-lg shadow-lg border border-gray-100">
-            <h5 className="font-bold text-base">Standard</h5>
-            <h2 className="pb-4 flex justify-center items-center font-bold border-b border-gray-300">
-              <span className="text-3xl mt-3 mr-1">₹</span>
+            <h5 className="font-bold text-base text-3xl">Standard</h5>
+            <h1 className="pb-4 flex justify-center items-center font-bold border-b border-gray-300">
+              {/* <span className="text-3xl mt-3 mr-1">₹</span>
               <span className="text-6xl">4000 </span>
-              <span className="ml-2 mt-3"> / session</span>
-            </h2>
-            <ul className="text-sm ">
+              <span className="ml-2 mt-3"> / session</span> */}
+            </h1>
+            <ul className="text-sm">
               <li className="pt-4 pb-4  border-gray-300">
                 An average session lasts for an hour, rounded off to the nearest
                 30 mins. 1 hour 30 mins will count as 2 sessions, while 1 hour
@@ -81,13 +81,12 @@ function consultation() {
                 "linear-gradient(90deg,	#A9A9A9 0%, 	#808080 100%)",
             }}
           >
-            <h5 className="font-bold text-base ">Monthly</h5>
+            <h5 className="font-bold text-base text-3xl">Monthly</h5>
 
             <h2 className="font-bold pb-4 mt-2 items-center flex justify-center border-b border-gray-100">
-
-              <span className="text-3xl mt-6 mr-1">₹</span>
+              {/* <span className="text-3xl mt-6 mr-1">₹</span>
               <span className="text-6xl ">30,000 </span>
-              <span className="ml-2 mt-3"> / month</span>
+              <span className="ml-2 mt-3"> / month</span> */}
             </h2>
             <ul className=" text-sm ">
               <li className="pt-4 pb-4 border-gray-200">
@@ -101,11 +100,13 @@ function consultation() {
         <h1 className="font-serif text-3xl mb-10 mt-20">Packages</h1>
         <section className="flex flex-col lg:flex-row lg:items-start items-center lg:justify-center w-full lg:px-24 space-x-3">
           <article className="bg-white w-4/5 lg:w-custom mb-10 lg:px-4 px-6 py-10 text-center text-primary-dark rounded-lg shadow-lg border border-gray-100">
-            <h5 className="font-bold text-base">openEHR Starter Pack</h5>
+            <h5 className="font-bold text-base text-xl">
+              openEHR Starter Pack
+            </h5>
 
-            <h2 className="pb-4 flex justify-center items-center font-bold border-b border-gray-300">
-              <span className="text-3xl mt-3 mr-1">₹</span>
-              <span className="text-6xl">30,000 </span>
+            <h2 className="pb-4 flex justify-center items-center font-bold border-b border-gray-300 ">
+              {/* <span className="text-3xl mt-3 mr-1">₹</span>
+              <span className="text-6xl">30,000 </span> */}
             </h2>
             <ul className="text-sm ">
               <li className="pt-4 pb-4  border-gray-300">
@@ -163,12 +164,10 @@ function consultation() {
             </AnimatePresence>
           </article>
           <article className="w-4/5 lg:w-custom mb-10 lg:px-4 px-6 py-10 text-center rounded-lg shadow-lg border border-gray-100">
-
-            <h5 className="font-bold text-base ">FHIR Starter Pack</h5>
+            <h5 className="font-bold text-base text-xl">FHIR Starter Pack</h5>
             <h2 className="font-bold pb-4 mt-2 items-center border-b border-gray-300 flex justify-center ">
-
-              <span className="text-3xl mt-6 mr-1">₹</span>
-              <span className="text-6xl ">30,000 </span>
+              {/* <span className="text-3xl mt-6 mr-1">₹</span>
+              <span className="text-6xl ">30,000 </span> */}
             </h2>
             <ul className=" text-sm ">
               <li className="pt-4 pb-4 border-gray-200">
@@ -227,12 +226,11 @@ function consultation() {
             </AnimatePresence>
           </article>
           <article className="bg-white w-4/5 lg:w-custom mb-10 lg:px-4 px-6 py-10 text-center text-primary-dark rounded-lg shadow-lg border border-gray-100">
-
-            <h5 className="font-bold text-base">SNOMED Starter Pack</h5>
+            <h5 className="font-bold text-base text-xl">SNOMED Starter Pack</h5>
 
             <h2 className="pb-4 flex justify-center items-center font-bold border-b border-gray-300">
-              <span className="text-3xl mt-3 mr-1">₹</span>
-              <span className="text-6xl">30,000 </span>
+              {/* <span className="text-3xl mt-3 mr-1">₹</span>
+              <span className="text-6xl">30,000 </span> */}
             </h2>
             <ul className="text-sm ">
               <li className="pt-4 pb-4  border-gray-300">
