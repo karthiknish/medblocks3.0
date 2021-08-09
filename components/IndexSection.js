@@ -56,7 +56,7 @@ function IndexSection() {
             <p className="mt-3">
               The Healthcare IT space is filled with standards, abbreviations
               and legacy systems. We provide you with a bundle of open-source
-              microservices and tools that get the job done. So instad of
+              microservices and tools that get the job done. So instead of
               worrying about setting up a FHIR server, or reinventing
               authentication, you can start focusing on your application's
               logic.

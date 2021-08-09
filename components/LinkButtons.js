@@ -2,7 +2,8 @@ const LinkButtons = ({ className }) => {
   return (
     <div className={`gap-3 justify-center p-10 flex ${className}`}>
       <a
-        href=""
+        target="_blank"
+        href="https://github.com/medblocks"
         className="rounded-md bg-transparent gap-2 inline-flex items-center hover:bg-gray-500 text-gray-700 font-semibold hover:text-white py-2 px-4 border border-gray-500 hover:border-transparent"
       >
         <svg
@@ -19,7 +20,7 @@ const LinkButtons = ({ className }) => {
         <span>Github</span>
       </a>
       <a
-        href=""
+        href="https://medblocks-ui-git-more-stories-sidharthramesh.vercel.app/"
         className="rounded-md bg-transparent gap-2 inline-flex items-center  hover:bg-green-700 hover:border-green-700 bg-green-500 border-green-500 font-semibold text-white py-2 px-4 border"
       >
         <span>Get started</span>
