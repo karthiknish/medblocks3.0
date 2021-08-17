@@ -71,7 +71,7 @@ const LinkButtons = ({ className }) => {
             </>
           )}
         </>
-      ) : success == true ? (
+      ) : success === true ? (
         <strong className="text-green-600">Thank you for your interest</strong>
       ) : (
         <strong className="text-red-600">Duplicate Email entered</strong>

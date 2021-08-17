@@ -88,7 +88,7 @@ export default function Hero() {
                   </>
                 )}
               </>
-            ) : success == true ? (
+            ) : success === true ? (
               <strong className="text-green-600">
                 Thank you for your interest
               </strong>
