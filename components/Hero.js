@@ -66,7 +66,7 @@ export default function Hero() {
             {success === null || success === false ? (
               <>
                 <input
-                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  className="shadow appearance-none border rounded w-3/4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   id="email"
                   type="text"
                   placeholder="Email"
@@ -89,9 +89,7 @@ export default function Hero() {
                 )}
               </>
             ) : success === true ? (
-              <strong className="text-green-600">
-                Thank you for your interest
-              </strong>
+              <strong>Thank you for your interest</strong>
             ) : (
               <strong className="text-red-600">Duplicate Email entered</strong>
             )}
