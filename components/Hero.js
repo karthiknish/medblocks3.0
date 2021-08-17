@@ -1,7 +1,33 @@
 import { motion } from "framer-motion";
 import LinkButtons from "./LinkButtons";
+import axios from "axios";
+import { useState } from "react";
+import validator from "validator";
 import IndexSection from "./IndexSection";
 export default function Hero() {
+  const [email, setEmail] = useState("");
+  const [success, setSuccess] = useState(null);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (validator.isEmail(email)) {
+      if (email !== "") {
+        axios
+          .post("/api", {
+            email,
+          })
+          .then((res) => {
+            console.log(res);
+            setSuccess(res.data.success);
+          })
+          .catch((e) => {
+            console.table(e.response.data);
+            setSuccess("dup");
+          });
+      }
+    } else {
+      setSuccess(false);
+    }
+  };
   return (
     <>
       <div className="flex max-w-7xl m-auto justify-center items-center flex-wrap xl:flex-nowrap xl:my-44">
@@ -10,7 +36,7 @@ export default function Hero() {
             Your stack for building modern healthcare applications
           </h3>
           <div className="gap-3 justify-center p-10 hidden xl:flex">
-            <a
+            {/* <a
               rel="noreferrer"
               target="_blank"
               href="https://github.com/medblocks"
@@ -36,7 +62,39 @@ export default function Hero() {
               className="rounded-md bg-transparent gap-2 inline-flex items-center  hover:bg-green-700 hover:border-green-700 bg-green-500 border-green-500 font-semibold text-white py-2 px-4 border"
             >
               <span>Get started</span>
-            </a>
+            </a> */}
+            {success === null || success === false ? (
+              <>
+                <input
+                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  id="email"
+                  type="text"
+                  placeholder="Email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+                <button
+                  onClick={handleSubmit}
+                  className="rounded-md bg-transparent gap-2 inline-flex items-center  hover:bg-green-700 hover:border-green-700 bg-green-500 border-green-500 font-semibold text-white py-2 px-4 border"
+                >
+                  <span>I'm interested</span>
+                </button>
+                {success === false && (
+                  <>
+                    <br />
+                    <strong className="text-red-600">
+                      Please enter a valid email
+                    </strong>
+                  </>
+                )}
+              </>
+            ) : success == true ? (
+              <strong className="text-green-600">
+                Thank you for your interest
+              </strong>
+            ) : (
+              <strong className="text-red-600">Duplicate Email entered</strong>
+            )}
           </div>
         </div>
         <motion.div
