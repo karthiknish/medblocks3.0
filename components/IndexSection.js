@@ -259,7 +259,7 @@ function IndexSection() {
                 href="./consultation"
                 className="rounded-md bg-transparent gap-2 inline-flex items-center hover:bg-gray-500 text-gray-700 font-semibold hover:text-white py-2 px-4 border border-gray-500 hover:border-transparent"
               >
-                <span>Pricing</span>
+                <span>More Info</span>
               </a>
               <a
                 href="mailto:sidharth@medblocks.org"

@@ -12,7 +12,7 @@ function consultation() {
         <title>Consultation | Medblocks</title>
       </Head>
       <Section className="text-gray-800">
-        <h1 className="font-serif text-3xl mb-10">Consultation Pricing</h1>
+        <h1 className="font-serif text-3xl mb-10">Consultation</h1>
         <div className="space-y-10">
           <p>
             I believe that it should be easy for everyone to learn and implement
@@ -36,21 +36,22 @@ function consultation() {
             your own development team.
           </p>
           <p>
-            To book a session, please send an email to{" "}
-            <a
+            To book a session, please fill the form below{" "}
+            {/* <a
               className="text-blue-500 font-semibold hover:text-blue-400"
               href="mailto:sidharth@medblocks.org"
             >
               sidharth@medblocks.org
-            </a>{" "}
-            and I will get back to you.
+            </a>{" "} */}
+            and we will get back to you.
           </p>
           <div>
             <a
-              href="mailto:sidharth@medblocks.org"
+              target="_blank"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSe_v8htTTqsIUsMKpKowyOAKyPTNSJRQZ2dqUwpXKI_TbDnZg/viewform?usp=sf_link"
               className="rounded-md hover:bg-green-700 mt-5 bg-green-500 font-semibold text-white py-2 px-4 border"
             >
-              <span>Send Email</span>
+              <span>Book session</span>
             </a>
           </div>
         </div>{" "}
@@ -135,28 +136,23 @@ function consultation() {
                   className="text-left space-y-1"
                 >
                   <li>
-                    <h4 className="font-bold">Session 0</h4>
-                    Understanding requirements and discuss implementation
-                    strategies.
+                    &#9679; Understanding requirements and discuss
+                    implementation strategies.
                   </li>
                   <li>
-                    <h4 className="font-bold">Session 1</h4>
-                    Clinical Modelling - Create Archetypes and Templates for
-                    your implementation.
+                    &#9679; Clinical Modelling - Create Archetypes and Templates
+                    for your implementation.
                   </li>
                   <li>
-                    <h4 className="font-bold">Session 2</h4>
-                    Setting up openEHR data repository, basic API operations and
-                    adminstration.
+                    &#9679; Setting up openEHR data repository, basic API
+                    operations and adminstration.
                   </li>
                   <li>
-                    <h4 className="font-bold">Session 3</h4>
-                    Designing custom interfaces using for openEHR. Creating and
-                    retrieving compositions.
+                    &#9679; Designing custom interfaces using for openEHR.
+                    Creating and retrieving compositions.
                   </li>
                   <li>
-                    <h4 className="font-bold">Session 4</h4>
-                    Querying clinical data using AQL and visualization
+                    &#9679; Querying clinical data using AQL and visualization
                     techniques.
                   </li>
                 </motion.ul>
@@ -196,29 +192,25 @@ function consultation() {
                   className="text-left space-y-1"
                 >
                   <li>
-                    <h4 className="font-bold">Session 0</h4>
-                    Understanding requirements and discuss implementation
-                    strategies.
+                    &#9679; Understanding requirements and discuss
+                    implementation strategies.
                   </li>
                   <li>
-                    <h4 className="font-bold">Session 1</h4>
-                    FHIR Resources, Paradigms and Servers - Introduction to FHIR
-                    resources and paradigms. Setting up FHIR server and API
-                    operations.
+                    &#9679; FHIR Resources, Paradigms and Servers - Introduction
+                    to FHIR resources and paradigms. Setting up FHIR server and
+                    API operations.
                   </li>
                   <li>
-                    <h4 className="font-bold">Session 2</h4>
-                    FHIR Profiles and Profiling - Understanding different
-                    profiles and mapping data to and from FHIR.
+                    &#9679; FHIR Profiles and Profiling - Understanding
+                    different profiles and mapping data to and from FHIR.
                   </li>
                   <li>
-                    <h4 className="font-bold">Session 3</h4>
-                    Designing custom interfaces from FHIR Profiles. Creating,
-                    retrieving and searching for resources using FHIR APIs.
+                    &#9679; Designing custom interfaces from FHIR Profiles.
+                    Creating, retrieving and searching for resources using FHIR
+                    APIs.
                   </li>
                   <li>
-                    <h4 className="font-bold">Session 4</h4>
-                    SMART on FHIR and deployment and management on Cloud
+                    &#9679; SMART on FHIR and deployment and management on Cloud
                     Platform (Google APIs for FHIR, Azure FHIR Platform)
                   </li>
                 </motion.ul>
@@ -260,28 +252,23 @@ function consultation() {
                   className="text-left space-y-1"
                 >
                   <li>
-                    <h4 className="font-bold">Session 0</h4>
-                    Understanding requirements and discuss implementation
-                    strategies.
+                    &#9679; Understanding requirements and discuss
+                    implementation strategies.
                   </li>
                   <li>
-                    <h4 className="font-bold">Session 1</h4>
-                    SNOMED CT Basics, Setting up a FHIR Terminology API.
+                    &#9679; SNOMED CT Basics, Setting up a FHIR Terminology API.
                   </li>
                   <li>
-                    <h4 className="font-bold">Session 2</h4>
-                    Designing interfaces that use SNOMED CT for data entry.
-                    Creating reference sets and using SNOMED EQL.
+                    &#9679; Designing interfaces that use SNOMED CT for data
+                    entry. Creating reference sets and using SNOMED EQL.
                   </li>
                   <li>
-                    <h4 className="font-bold">Session 3</h4>
-                    Creating SNOMED CT extensions to cover gaps in content,
-                    language maps.
+                    &#9679; Creating SNOMED CT extensions to cover gaps in
+                    content, language maps.
                   </li>
                   <li>
-                    <h4 className="font-bold">Session 4</h4>
-                    Mapping SNOMED CT to ICD10, and other code systems, advanced
-                    analytics techniques.
+                    &#9679; Mapping SNOMED CT to ICD10, and other code systems,
+                    advanced analytics techniques.
                   </li>
                 </motion.ul>
               )}

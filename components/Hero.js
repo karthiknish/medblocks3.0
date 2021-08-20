@@ -66,7 +66,7 @@ export default function Hero() {
             {success === null || success === false ? (
               <>
                 <input
-                  className="shadow appearance-none border rounded w-3/4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  className="shadow appearance-none border rounded w-3/4 px-3 text-gray-700 leading-tight focus:outline-none focus:border-gray-500"
                   id="email"
                   type="text"
                   placeholder="Email"
