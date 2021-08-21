@@ -48,7 +48,7 @@ function consultation() {
           <div>
             <a
               target="_blank"
-              href="https://docs.google.com/forms/d/e/1FAIpQLSe_v8htTTqsIUsMKpKowyOAKyPTNSJRQZ2dqUwpXKI_TbDnZg/viewform?usp=sf_link"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSdyc37n-G7wyhf1f1Ao4WAvcEpX1HOhUJVrN6KmmGMMo6oaKw/viewform?tandem_follow=Sidharth"
               className="rounded-md hover:bg-green-700 mt-5 bg-green-500 font-semibold text-white py-2 px-4 border"
             >
               <span>Book session</span>
