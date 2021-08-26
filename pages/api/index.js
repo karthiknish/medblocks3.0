@@ -13,8 +13,8 @@ export default async (req, res) => {
         });
         let transporter = nodemailer.createTransport({
           host: "smtp.mailgun.org",
-          port: 587,
-          secure: false,
+          port: 465,
+          secure: true,
           auth: {
             user: process.env.MAILGUN_EMAIL,
             pass: process.env.MAILGUN_PASSWORD,
