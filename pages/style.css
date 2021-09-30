@@ -1,0 +1,4 @@
+.customCard:hover{
+    transform: scale(1.02);
+    transition: all 0.25s ease;
+}

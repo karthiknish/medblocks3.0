@@ -59,7 +59,9 @@ function consultation() {
       <div className="flex flex-col items-center w-full max-w-7xl mx-auto text-gray-800">
         <h1 className="font-serif text-3xl mb-10">Standard Sessions</h1>
         <section className="flex flex-col lg:flex-row items-center lg:justify-center w-full lg:px-24  space-x-3">
-          <article className="bg-white w-4/5 lg:w-custom mb-10 lg:px-4 px-6 py-10 text-center text-primary-dark rounded-lg shadow-lg border border-gray-100">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdyc37n-G7wyhf1f1Ao4WAvcEpX1HOhUJVrN6KmmGMMo6oaKw/viewform?tandem_follow=Sidharth" 
+              className="customCard bg-white w-4/5 lg:w-custom mb-10 lg:px-4 px-6 py-10 text-center text-primary-dark rounded-lg shadow-lg border border-gray-100"
+              >
             <h5 className="font-bold text-base text-3xl">Standard</h5>
             <h1 className="pb-4 flex justify-center items-center font-bold border-b border-gray-300">
               {/* <span className="text-3xl mt-3 mr-1">₹</span>
@@ -73,11 +75,13 @@ function consultation() {
                 15 mins count as 1 session.
               </li>
             </ul>
-          </article>
+          </a>
 
-          <article
-            className="w-4/5 lg:w-custom mb-10 lg:px-4 px-6 py-10 text-center text-white rounded-lg shadow-lg border border-gray-100"
+          <a
+            className="customCard w-4/5 lg:w-custom mb-10 lg:px-4 px-6 py-10 text-center text-white rounded-lg shadow-lg border border-gray-100"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSdyc37n-G7wyhf1f1Ao4WAvcEpX1HOhUJVrN6KmmGMMo6oaKw/viewform?tandem_follow=Sidharth"
             style={{
+
               backgroundImage:
                 "linear-gradient(90deg,	#A9A9A9 0%, 	#808080 100%)",
             }}
@@ -95,7 +99,7 @@ function consultation() {
                 long-term clinical modelling and implementation support.
               </li>
             </ul>
-          </article>
+          </a>
         </section>
 
         <h1 className="font-serif text-3xl mb-10 mt-20">Packages</h1>
