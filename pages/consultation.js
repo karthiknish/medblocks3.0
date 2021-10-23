@@ -279,6 +279,92 @@ function consultation() {
             </AnimatePresence>
           </article>
         </section>
+        <Section>
+        <h1 className="font-serif text-gray-900 text-3xl md:text-3xl text-center mb-10">
+          Services we Provide </h1>
+        <div className="customGrid">
+          <div href="https://www.hl7.org/fhir/" className="flex flex-col md:flex-row shadow-lg border border-gray-100 rounded-lg p-8">
+            <div className="flex-1">
+              <a className="flex items-end gap-3 items-center justify-center" href="https://www.hl7.org/fhir/">
+                <img
+                  alt="Medblocks"
+                  src="/icon-fhir.png"
+                  className="w-10"
+                ></img>
+                <h3 className="text-xl font-semibold">FHIR</h3>
+              </a>
+              
+              <ul className="mt-5">
+                <li className="m-2">● Setting up an FHIR server - Cloud/on-premise</li>
+                <li className="m-2">● FHIR Facade on existing data source</li>
+                <li className="m-2">● Building and deploying SMART on FHIR applications</li>
+                <li className="m-2">● HL7v2/CCDA to FHIR mapping</li>
+                <li className="m-2">● FHIR Profiling and clinical modeling</li>
+                <li className="m-2">● FHIR first forms</li>
+                <li className="m-2">● Integration with NDHM APIs</li>
+                <li className="m-2">● Analytics and dashboards on FHIR data sources</li>
+                
+              </ul>
+            </div>
+          </div>
+          <div className="flex flex-col md:flex-row shadow-lg border border-gray-100 rounded-lg p-8">
+            <div className="flex-1">
+              <a className="flex items-end gap-3 items-center justify-center" href="https://www.openehr.org/">
+                <img alt="openEHR" src="/openehr-icon.svg" className="w-8"></img>
+                <h3 className="text-xl font-semibold">
+                  openEHR
+                </h3>
+                
+              </a>
+              <ul className="mt-5">
+                <li className="m-2">● Setting up openEHR server - Cloud/on-premise</li>
+                <li className="m-2">● Clinical Modelling and Template Designing</li>
+                <li className="m-2">● Building openEHR based applications and forms from templates</li>
+                <li className="m-2">● Integrating Medblocks UI into your existing frontend application</li>
+                <li className="m-2">● Dashboards and analytics using AQL on openEHR repositories</li>                
+              </ul> 
+              
+            </div>
+          </div>
+          <div className="flex flex-col md:flex-row shadow-lg border border-gray-100 rounded-lg p-8">
+            <div className="flex-1">
+              <a className="flex items-end gap-3 items-center justify-center">
+                <img alt="DeviceIntegration" src="/device.png" className="w-8"></img>
+                <h3 className="text-xl font-semibold">
+                Device Integrations
+                </h3>
+              </a>
+              <ul className="mt-5">
+                <li className="m-2">● Setting up openEHR server - Cloud/on-premise</li>
+                <li className="m-2">● Clinical Modelling and Template Designing</li>
+                <li className="m-2">● Building openEHR based applications and forms from templates</li>
+                <li className="m-2">● Integrating Medblocks UI into your existing frontend application</li>
+                <li className="m-2">● Dashboards and analytics using AQL on openEHR repositories</li>                
+              </ul> 
+            </div>
+          </div>
+          <div className="flex flex-col md:flex-row shadow-lg border border-gray-100 rounded-lg p-8">
+            <div className="flex-1">
+              <a className="flex items-end gap-3 items-center justify-center" href="https://www.snomed.org/">
+                <img alt="snomed" src="/snomed-browser.png" className="w-8"></img>
+                <h3 className="text-xl font-semibold">
+                SNOMED CT
+                </h3>
+              </a>
+              <ul className="mt-5 ">
+                <li className="m-2">● Setting up SNOMED CT search instance - Cloud/on-premise</li>
+                <li className="m-2">● Obtaining and managing SNOMED CT license for your application</li>
+                <li className="m-2">● SNOMED CT mapping and Reference set creation</li>
+                <li className="m-2">● SNOMED CT autocomplete/search implementation</li>
+                <li className="m-2">● RxNorm autocomplete/search implementation</li>          
+                <li className="m-2">● LOINC/SNOMED CT/RxNorm mapping for internal codes</li>      
+                <li className="m-2">● SNOMED CT to ICD 10 mapping</li>
+                <li className="m-2">● Analytics on data sources with SNOMED CT</li>            
+              </ul> 
+            </div>
+          </div>
+        </div>
+      </Section>
       </div>
     </>
   );
