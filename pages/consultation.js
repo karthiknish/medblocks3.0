@@ -283,7 +283,7 @@ function consultation() {
         <h1 className="font-serif text-gray-900 text-3xl md:text-3xl text-center mb-10">
           Services we Provide </h1>
         <div className="customGrid">
-          <div href="https://www.hl7.org/fhir/" className="flex flex-col md:flex-row shadow-lg border border-gray-100 rounded-lg p-8">
+          <div className="flex flex-col md:flex-row shadow-lg border border-gray-100 rounded-lg p-8">
             <div className="flex-1">
               <a className="flex items-end gap-3 items-center justify-center" href="https://www.hl7.org/fhir/">
                 <img
@@ -305,6 +305,26 @@ function consultation() {
                 <li className="m-2">● Analytics and dashboards on FHIR data sources</li>
                 
               </ul>
+            </div>
+          </div>
+          <div className="flex flex-col md:flex-row shadow-lg border border-gray-100 rounded-lg p-8">
+            <div className="flex-1">
+              <a className="flex items-end gap-3 items-center justify-center" href="https://www.snomed.org/">
+                <img alt="snomed" src="/snomed-browser.png" className="w-8"></img>
+                <h3 className="text-xl font-semibold">
+                SNOMED CT
+                </h3>
+              </a>
+              <ul className="mt-5 ">
+                <li className="m-2">● Setting up SNOMED CT search instance - Cloud/on-premise</li>
+                <li className="m-2">● Obtaining and managing SNOMED CT license for your application</li>
+                <li className="m-2">● SNOMED CT mapping and Reference set creation</li>
+                <li className="m-2">● SNOMED CT autocomplete/search implementation</li>
+                <li className="m-2">● RxNorm autocomplete/search implementation</li>          
+                <li className="m-2">● LOINC/SNOMED CT/RxNorm mapping for internal codes</li>      
+                <li className="m-2">● SNOMED CT to ICD 10 mapping</li>
+                <li className="m-2">● Analytics on data sources with SNOMED CT</li>            
+              </ul> 
             </div>
           </div>
           <div className="flex flex-col md:flex-row shadow-lg border border-gray-100 rounded-lg p-8">
@@ -343,26 +363,7 @@ function consultation() {
               </ul> 
             </div>
           </div>
-          <div className="flex flex-col md:flex-row shadow-lg border border-gray-100 rounded-lg p-8">
-            <div className="flex-1">
-              <a className="flex items-end gap-3 items-center justify-center" href="https://www.snomed.org/">
-                <img alt="snomed" src="/snomed-browser.png" className="w-8"></img>
-                <h3 className="text-xl font-semibold">
-                SNOMED CT
-                </h3>
-              </a>
-              <ul className="mt-5 ">
-                <li className="m-2">● Setting up SNOMED CT search instance - Cloud/on-premise</li>
-                <li className="m-2">● Obtaining and managing SNOMED CT license for your application</li>
-                <li className="m-2">● SNOMED CT mapping and Reference set creation</li>
-                <li className="m-2">● SNOMED CT autocomplete/search implementation</li>
-                <li className="m-2">● RxNorm autocomplete/search implementation</li>          
-                <li className="m-2">● LOINC/SNOMED CT/RxNorm mapping for internal codes</li>      
-                <li className="m-2">● SNOMED CT to ICD 10 mapping</li>
-                <li className="m-2">● Analytics on data sources with SNOMED CT</li>            
-              </ul> 
-            </div>
-          </div>
+
         </div>
       </Section>
       </div>
