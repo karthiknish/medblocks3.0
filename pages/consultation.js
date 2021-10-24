@@ -102,183 +102,6 @@ function consultation() {
           </a>
         </section>
 
-        <h1 className="font-serif text-3xl mb-10 mt-20">Packages</h1>
-        <section className="flex flex-col lg:flex-row lg:items-start items-center lg:justify-center w-full lg:px-24 space-x-3">
-          <article className="bg-white w-4/5 lg:w-custom mb-10 lg:px-4 px-6 py-10 text-center text-primary-dark rounded-lg shadow-lg border border-gray-100">
-            <h5 className="font-bold text-base text-xl">
-              openEHR Starter Pack
-            </h5>
-
-            <h2 className="pb-4 flex justify-center items-center font-bold border-b border-gray-300 ">
-              {/* <span className="text-3xl mt-3 mr-1">₹</span>
-              <span className="text-6xl">30,000 </span> */}
-            </h2>
-            <ul className="text-sm ">
-              <li className="pt-4 pb-4  border-gray-300">
-                Get up and running with your clinical data using openEHR. All
-                the sessions are personalized to your needs and uses your
-                clinical data templates as examples.
-              </li>
-            </ul>
-            <div
-              onClick={() => setOpenone(!openone)}
-              className="flex items-center justify-center cursor-pointer"
-            >
-              <h3 className="font-bold">More Details</h3>
-              {!openone ? (
-                <img width="50" src="icons/arrow-down.svg" />
-              ) : (
-                <img width="50" src="icons/up-detail.svg" />
-              )}
-            </div>
-            <AnimatePresence>
-              {openone && (
-                <motion.ul
-                  initial={{ y: -100, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  exit={{ y: -10, opacity: 0 }}
-                  className="text-left space-y-1"
-                >
-                  <li>
-                    &#9679; Understanding requirements and discuss
-                    implementation strategies.
-                  </li>
-                  <li>
-                    &#9679; Clinical Modelling - Create Archetypes and Templates
-                    for your implementation.
-                  </li>
-                  <li>
-                    &#9679; Setting up openEHR data repository, basic API
-                    operations and adminstration.
-                  </li>
-                  <li>
-                    &#9679; Designing custom interfaces using for openEHR.
-                    Creating and retrieving compositions.
-                  </li>
-                  <li>
-                    &#9679; Querying clinical data using AQL and visualization
-                    techniques.
-                  </li>
-                </motion.ul>
-              )}
-            </AnimatePresence>
-          </article>
-          <article className="w-4/5 lg:w-custom mb-10 lg:px-4 px-6 py-10 text-center rounded-lg shadow-lg border border-gray-100">
-            <h5 className="font-bold text-base text-xl">FHIR Starter Pack</h5>
-            <h2 className="font-bold pb-4 mt-2 items-center border-b border-gray-300 flex justify-center ">
-              {/* <span className="text-3xl mt-6 mr-1">₹</span>
-              <span className="text-6xl ">30,000 </span> */}
-            </h2>
-            <ul className=" text-sm ">
-              <li className="pt-4 pb-4 border-gray-200">
-                Understand FHIR, and start profiling resources for your use
-                case. Implement your business logic in FHIR, with hand-on
-                examples on mapping to and from FHIR.
-              </li>
-            </ul>
-            <div
-              onClick={() => setOpentwo(!opentwo)}
-              className="flex items-center justify-center cursor-pointer"
-            >
-              <h3 className="font-bold">More Details</h3>
-              {!opentwo ? (
-                <img width="50" src="icons/arrow-down.svg" />
-              ) : (
-                <img width="50" src="icons/up-detail.svg" />
-              )}
-            </div>
-            <AnimatePresence>
-              {opentwo && (
-                <motion.ul
-                  initial={{ y: -100, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  exit={{ y: -10, opacity: 0 }}
-                  className="text-left space-y-1"
-                >
-                  <li>
-                    &#9679; Understanding requirements and discuss
-                    implementation strategies.
-                  </li>
-                  <li>
-                    &#9679; FHIR Resources, Paradigms and Servers - Introduction
-                    to FHIR resources and paradigms. Setting up FHIR server and
-                    API operations.
-                  </li>
-                  <li>
-                    &#9679; FHIR Profiles and Profiling - Understanding
-                    different profiles and mapping data to and from FHIR.
-                  </li>
-                  <li>
-                    &#9679; Designing custom interfaces from FHIR Profiles.
-                    Creating, retrieving and searching for resources using FHIR
-                    APIs.
-                  </li>
-                  <li>
-                    &#9679; SMART on FHIR and deployment and management on Cloud
-                    Platform (Google APIs for FHIR, Azure FHIR Platform)
-                  </li>
-                </motion.ul>
-              )}
-            </AnimatePresence>
-          </article>
-          <article className="bg-white w-4/5 lg:w-custom mb-10 lg:px-4 px-6 py-10 text-center text-primary-dark rounded-lg shadow-lg border border-gray-100">
-            <h5 className="font-bold text-base text-xl">SNOMED Starter Pack</h5>
-
-            <h2 className="pb-4 flex justify-center items-center font-bold border-b border-gray-300">
-              {/* <span className="text-3xl mt-3 mr-1">₹</span>
-              <span className="text-6xl">30,000 </span> */}
-            </h2>
-            <ul className="text-sm ">
-              <li className="pt-4 pb-4  border-gray-300">
-                Enable semantic interoperability with using the most prefered
-                terminology across the world. Set up your own SNOMED CT server
-                and start creating reference sets and extensions for your
-                implementation.
-              </li>
-            </ul>
-            <div
-              onClick={() => setOpenthree(!openthree)}
-              className="flex items-center justify-center cursor-pointer"
-            >
-              <h3 className="font-bold">More Details</h3>
-              {!openthree ? (
-                <img width="50" src="icons/arrow-down.svg" />
-              ) : (
-                <img width="50" src="icons/up-detail.svg" />
-              )}
-            </div>
-            <AnimatePresence>
-              {openthree && (
-                <motion.ul
-                  initial={{ y: -100, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  exit={{ y: -10, opacity: 0 }}
-                  className="text-left space-y-1"
-                >
-                  <li>
-                    &#9679; Understanding requirements and discuss
-                    implementation strategies.
-                  </li>
-                  <li>
-                    &#9679; SNOMED CT Basics, Setting up a FHIR Terminology API.
-                  </li>
-                  <li>
-                    &#9679; Designing interfaces that use SNOMED CT for data
-                    entry. Creating reference sets and using SNOMED EQL.
-                  </li>
-                  <li>
-                    &#9679; Creating SNOMED CT extensions to cover gaps in
-                    content, language maps.
-                  </li>
-                  <li>
-                    &#9679; Mapping SNOMED CT to ICD10, and other code systems,
-                    advanced analytics techniques.
-                  </li>
-                </motion.ul>
-              )}
-            </AnimatePresence>
-          </article>
-        </section>
         <Section>
         <h1 className="font-serif text-gray-900 text-3xl md:text-3xl text-center mb-10">
           Services we Provide </h1>
@@ -295,14 +118,14 @@ function consultation() {
               </a>
               
               <ul className="mt-5">
-                <li className="m-2">● Setting up an FHIR server - Cloud/on-premise</li>
-                <li className="m-2">● FHIR Facade on existing data source</li>
-                <li className="m-2">● Building and deploying SMART on FHIR applications</li>
-                <li className="m-2">● HL7v2/CCDA to FHIR mapping</li>
-                <li className="m-2">● FHIR Profiling and clinical modeling</li>
-                <li className="m-2">● FHIR first forms</li>
-                <li className="m-2">● Integration with NDHM APIs</li>
-                <li className="m-2">● Analytics and dashboards on FHIR data sources</li>
+                <li className="m-2">• Setting up an FHIR server - Cloud/on-premise</li>
+                <li className="m-2">• FHIR Facade on existing data source</li>
+                <li className="m-2">• Building and deploying SMART on FHIR applications</li>
+                <li className="m-2">• HL7v2/CCDA to FHIR mapping</li>
+                <li className="m-2">• FHIR Profiling and clinical modeling</li>
+                <li className="m-2">• FHIR first forms</li>
+                <li className="m-2">• Integration with NDHM APIs</li>
+                <li className="m-2">• Analytics and dashboards on FHIR data sources</li>
                 
               </ul>
             </div>
@@ -316,14 +139,14 @@ function consultation() {
                 </h3>
               </a>
               <ul className="mt-5 cursor-default">
-                <li className="m-2">● Setting up SNOMED CT search instance - Cloud/on-premise</li>
-                <li className="m-2">● Obtaining and managing SNOMED CT license for your application</li>
-                <li className="m-2">● SNOMED CT mapping and Reference set creation</li>
-                <li className="m-2">● SNOMED CT autocomplete/search implementation</li>
-                <li className="m-2">● RxNorm autocomplete/search implementation</li>          
-                <li className="m-2">● LOINC/SNOMED CT/RxNorm mapping for internal codes</li>      
-                <li className="m-2">● SNOMED CT to ICD 10 mapping</li>
-                <li className="m-2">● Analytics on data sources with SNOMED CT</li>            
+                <li className="m-2">• Setting up SNOMED CT search instance - Cloud/on-premise</li>
+                <li className="m-2">• Obtaining and managing SNOMED CT license for your application</li>
+                <li className="m-2">• SNOMED CT mapping and Reference set creation</li>
+                <li className="m-2">• SNOMED CT autocomplete/search implementation</li>
+                <li className="m-2">• RxNorm autocomplete/search implementation</li>          
+                <li className="m-2">• LOINC/SNOMED CT/RxNorm mapping for internal codes</li>      
+                <li className="m-2">• SNOMED CT to ICD 10 mapping</li>
+                <li className="m-2">• Analytics on data sources with SNOMED CT</li>            
               </ul> 
             </div>
           </div>
@@ -337,11 +160,11 @@ function consultation() {
                 
               </a>
               <ul className="mt-5">
-                <li className="m-2">● Setting up openEHR server - Cloud/on-premise</li>
-                <li className="m-2">● Clinical Modelling and Template Designing</li>
-                <li className="m-2">● Building openEHR based applications and forms from templates</li>
-                <li className="m-2">● Integrating Medblocks UI into your existing frontend application</li>
-                <li className="m-2">● Dashboards and analytics using AQL on openEHR repositories</li>                
+                <li className="m-2">• Setting up openEHR server - Cloud/on-premise</li>
+                <li className="m-2">• Clinical Modelling and Template Designing</li>
+                <li className="m-2">• Building openEHR based applications and forms from templates</li>
+                <li className="m-2">• Integrating Medblocks UI into your existing frontend application</li>
+                <li className="m-2">• Dashboards and analytics using AQL on openEHR repositories</li>                
               </ul> 
               
             </div>
@@ -355,11 +178,11 @@ function consultation() {
                 </h3>
               </a>
               <ul className="mt-5">
-                <li className="m-2">● Setting up openEHR server - Cloud/on-premise</li>
-                <li className="m-2">● Clinical Modelling and Template Designing</li>
-                <li className="m-2">● Building openEHR based applications and forms from templates</li>
-                <li className="m-2">● Integrating Medblocks UI into your existing frontend application</li>
-                <li className="m-2">● Dashboards and analytics using AQL on openEHR repositories</li>                
+                <li className="m-2">• Interfacing with devices using drivers</li>
+                <li className="m-2">• Mapping data from devices into FHIR resources</li>
+                <li className="m-2">• Mapping data from devices into openEHR compositions</li>
+                <li className="m-2">• Integrating Medblocks UI into your existing frontend application</li>
+                <li className="m-2">• Dashboards and analytics using AQL on openEHR repositories</li>                
               </ul> 
             </div>
           </div>
