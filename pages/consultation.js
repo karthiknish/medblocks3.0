@@ -315,7 +315,7 @@ function consultation() {
                 SNOMED CT
                 </h3>
               </a>
-              <ul className="mt-5 ">
+              <ul className="mt-5 cursor-default">
                 <li className="m-2">● Setting up SNOMED CT search instance - Cloud/on-premise</li>
                 <li className="m-2">● Obtaining and managing SNOMED CT license for your application</li>
                 <li className="m-2">● SNOMED CT mapping and Reference set creation</li>
