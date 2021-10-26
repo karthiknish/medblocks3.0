@@ -181,8 +181,7 @@ function consultation() {
                 <li className="m-2">• Interfacing with devices using drivers</li>
                 <li className="m-2">• Mapping data from devices into FHIR resources</li>
                 <li className="m-2">• Mapping data from devices into openEHR compositions</li>
-                <li className="m-2">• Integrating Medblocks UI into your existing frontend application</li>
-                <li className="m-2">• Dashboards and analytics using AQL on openEHR repositories</li>                
+                <li className="m-2">• LOINC mapping for result codes from autoanalysers</li>               
               </ul> 
             </div>
           </div>
